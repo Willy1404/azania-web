@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "slug": "azania-capital-limited",
+    "title": "Azania Capital Limited",
+    "category": "Treasury & Capital",
+    "categoryId": 1,
+    "icon": "tji-manage",
+    "titleLarge": "Specialist capital and investment services",
+    "shortDesc": "Investment banking, advisory, and capital market solutions through Azania Capital Limited.",
+    "desc1": "Azania Capital Limited is the investment and capital markets arm of Azania Bank, providing specialist services to corporates, institutions, and high-net-worth clients.",
+    "desc2": "From capital raising to advisory and structured finance, Azania Capital connects clients to opportunities in Tanzania and beyond.",
+    "features": ["Investment banking advisory", "Capital raising support", "Structured finance solutions", "Institutional client services"],
+    "benefits": [
+      { "number": "01.", "title": "Specialist Expertise", "desc": "Access dedicated capital markets and investment professionals." },
+      { "number": "02.", "title": "Integrated Banking", "desc": "Leverage the full Azania Bank group relationship." },
+      { "number": "03.", "title": "Market Access", "desc": "Connect to local and regional capital market opportunities." }
+    ],
+    "faqs": [
+      { "question": "What is Azania Capital Limited?", "answer": "Azania Capital Limited is a subsidiary of Azania Bank providing investment banking and capital market services." },
+      { "question": "Who are the target clients?", "answer": "Services are aimed at corporates, institutional investors, and qualified individual clients." },
+      { "question": "How do I engage Azania Capital?", "answer": "Contact the Azania Capital desk through your relationship manager or visit our head office." }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "forex",
+    "title": "FOREX",
+    "category": "Treasury & Capital",
+    "categoryId": 1,
+    "icon": "tji-worldwide",
+    "titleLarge": "Foreign exchange and currency solutions",
+    "shortDesc": "Buy and sell foreign currency for trade, travel, and investment needs.",
+    "desc1": "Azania Bank FOREX services support individuals and businesses with competitive exchange rates and reliable currency transactions.",
+    "desc2": "Whether you need USD, EUR, GBP, or other major currencies for imports, exports, or personal travel, our treasury team provides professional execution.",
+    "features": ["Spot and forward FX", "Competitive exchange rates", "Trade-related FX", "Corporate treasury support"],
+    "benefits": [
+      { "number": "01.", "title": "Competitive Rates", "desc": "Access market-aligned exchange rates for your transactions." },
+      { "number": "02.", "title": "Trade Support", "desc": "Facilitate import and export payments in foreign currency." },
+      { "number": "03.", "title": "Expert Execution", "desc": "Benefit from experienced treasury professionals." }
+    ],
+    "faqs": [
+      { "question": "What currencies are available?", "answer": "Major currencies including USD, EUR, and GBP are available subject to market conditions and regulatory requirements." },
+      { "question": "Can businesses get forward FX contracts?", "answer": "Yes. Corporate clients can access forward FX arrangements subject to credit and documentation requirements." },
+      { "question": "Where can I buy or sell foreign currency?", "answer": "FOREX transactions are available at designated branches and through corporate treasury for business clients." }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "capital-market-services",
+    "title": "Capital Market Services",
+    "category": "Treasury & Capital",
+    "categoryId": 1,
+    "icon": "tji-performance",
+    "titleLarge": "Access to capital markets and securities services",
+    "shortDesc": "Securities trading, custody, and capital market participation for institutional and corporate clients.",
+    "desc1": "Azania Bank Capital Market Services connect clients to securities markets with professional execution, custody, and advisory support.",
+    "desc2": "From government securities to corporate bonds and equities, we help clients participate in Tanzania's growing capital markets.",
+    "features": ["Securities trading", "Custody services", "Primary market participation", "Market research and advisory"],
+    "benefits": [
+      { "number": "01.", "title": "Market Participation", "desc": "Access primary and secondary capital markets efficiently." },
+      { "number": "02.", "title": "Secure Custody", "desc": "Hold securities with a regulated banking institution." },
+      { "number": "03.", "title": "Informed Decisions", "desc": "Benefit from market insights and professional guidance." }
+    ],
+    "faqs": [
+      { "question": "What capital market products are available?", "answer": "Products include government securities, corporate bonds, and equities subject to market availability and client eligibility." },
+      { "question": "Who can access capital market services?", "answer": "Services are available to corporates, institutional investors, and qualified individual clients." },
+      { "question": "How do I open a securities account?", "answer": "Contact the capital markets desk with required KYC documentation to begin the account opening process." }
+    ]
+  }
+]

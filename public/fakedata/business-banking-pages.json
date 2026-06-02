@@ -1,0 +1,416 @@
+[
+  {
+    "id": 1,
+    "slug": "alternative-channels",
+    "title": "Alternative Channels",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-operations",
+    "titleLarge": "Multiple ways to bank beyond the branch",
+    "shortDesc": "Access your business accounts through digital, mobile, and partner channels designed for convenience.",
+    "desc1": "Azania Bank alternative channels give your business the flexibility to transact anytime, anywhere. From internet and mobile banking to agency networks and merchant solutions, we connect you to the tools that keep operations moving.",
+    "desc2": "Whether you manage payroll, collect payments, or monitor cash flow, our integrated channels provide secure access with consistent reporting and control.",
+    "features": ["Internet and mobile banking", "Agency banking network", "Cards and merchant services", "Unified account visibility"],
+    "benefits": [
+      { "number": "01.", "title": "24/7 Access", "desc": "Manage accounts and payments outside traditional banking hours." },
+      { "number": "02.", "title": "Operational Efficiency", "desc": "Reduce branch visits and streamline daily treasury tasks." },
+      { "number": "03.", "title": "Secure Controls", "desc": "Role-based access and transaction limits protect your business." }
+    ],
+    "faqs": [
+      { "question": "What alternative channels does Azania Bank offer for businesses?", "answer": "We provide internet banking, mobile banking, WhatsApp banking, agency banking (WAKALA), cards, merchant channels, and money transfer services." },
+      { "question": "Can I use multiple channels on one business account?", "answer": "Yes. Your business account can be accessed across eligible channels with consistent balances and transaction history." },
+      { "question": "How do I get started?", "answer": "Visit any Azania Bank branch or contact your relationship manager to enroll in the channels that suit your business." }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "azania-lipa",
+    "title": "Azania LIPA",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-budget",
+    "titleLarge": "Simple, fast business collections",
+    "shortDesc": "Collect payments from customers quickly using Azania LIPA digital collection solutions.",
+    "desc1": "Azania LIPA helps businesses receive payments seamlessly through modern collection tools. Ideal for retailers, service providers, and SMEs that need reliable, traceable incoming payments.",
+    "desc2": "Track collections in real time, reconcile faster, and improve customer experience with a straightforward payment experience.",
+    "features": ["Fast payment collection", "Real-time notifications", "Easy reconciliation", "Suitable for SMEs and corporates"],
+    "benefits": [
+      { "number": "01.", "title": "Improved Cash Flow", "desc": "Receive funds faster and reduce delays in payment collection." },
+      { "number": "02.", "title": "Better Tracking", "desc": "Monitor incoming payments with clear transaction records." },
+      { "number": "03.", "title": "Customer Convenience", "desc": "Offer customers a simple way to pay for goods and services." }
+    ],
+    "faqs": [
+      { "question": "What is Azania LIPA?", "answer": "Azania LIPA is a digital payment collection solution that helps businesses receive customer payments efficiently." },
+      { "question": "Who can use Azania LIPA?", "answer": "Registered businesses with an Azania Bank account can apply for LIPA collection services." },
+      { "question": "How do I register?", "answer": "Contact your branch or relationship manager to complete the Azania LIPA onboarding process." }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "whatsapp-banking",
+    "title": "WhatsApp Banking",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-comment",
+    "titleLarge": "Banking support on the app you already use",
+    "shortDesc": "Check balances, get support, and perform selected banking services via WhatsApp.",
+    "desc1": "WhatsApp Banking brings essential business banking services to a familiar messaging platform. Stay connected to your account with convenient, guided interactions.",
+    "desc2": "Ideal for business owners who need quick updates and support without logging into full internet banking.",
+    "features": ["Balance enquiries", "Service requests", "Guided support", "Convenient access"],
+    "benefits": [
+      { "number": "01.", "title": "Quick Updates", "desc": "Get account information without visiting a branch." },
+      { "number": "02.", "title": "Easy to Use", "desc": "Interact through a platform your team already uses daily." },
+      { "number": "03.", "title": "Responsive Support", "desc": "Receive guided assistance for common banking needs." }
+    ],
+    "faqs": [
+      { "question": "Is WhatsApp Banking secure?", "answer": "Yes. Access is protected through verified enrollment and authentication steps before sensitive information is shared." },
+      { "question": "What services are available on WhatsApp?", "answer": "Available services include balance enquiries, service requests, and guided support. Full transaction capabilities may vary by account type." },
+      { "question": "How do I activate WhatsApp Banking?", "answer": "Register through Azania Bank using your registered business mobile number and follow the activation instructions provided." }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "internet-banking",
+    "title": "Internet Banking",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-worldwide",
+    "titleLarge": "Full-service business banking online",
+    "shortDesc": "Transfer funds, pay suppliers, manage users, and monitor accounts from your desktop.",
+    "desc1": "Azania Bank Internet Banking gives businesses comprehensive control over accounts, payments, and approvals from a secure online platform.",
+    "desc2": "Configure user roles, set limits, and manage daily operations with detailed reporting for finance and treasury teams.",
+    "features": ["Fund transfers and bulk payments", "User and role management", "Account statements and reports", "Secure multi-level approvals"],
+    "benefits": [
+      { "number": "01.", "title": "Centralized Control", "desc": "Manage multiple accounts and users from one dashboard." },
+      { "number": "02.", "title": "Time Savings", "desc": "Execute payments and approvals without visiting a branch." },
+      { "number": "03.", "title": "Audit Ready", "desc": "Access transaction history and reports for reconciliation." }
+    ],
+    "faqs": [
+      { "question": "Can multiple staff access internet banking?", "answer": "Yes. You can assign roles and permissions so each user has appropriate access levels." },
+      { "question": "What transactions can I perform online?", "answer": "Depending on your profile, you can transfer funds, pay suppliers, download statements, and manage standing instructions." },
+      { "question": "How do I apply for business internet banking?", "answer": "Complete the internet banking application form at your branch or through your relationship manager." }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "mobile-banking",
+    "title": "Mobile Banking",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-phone",
+    "titleLarge": "Your business accounts in your pocket",
+    "shortDesc": "Monitor balances, approve payments, and stay in control on the go.",
+    "desc1": "Azania Bank Mobile Banking keeps business owners and authorized staff connected to accounts wherever they are.",
+    "desc2": "View balances, track transactions, and perform approved services with the security and convenience of mobile access.",
+    "features": ["Balance and transaction views", "Payment approvals", "Alerts and notifications", "Secure mobile login"],
+    "benefits": [
+      { "number": "01.", "title": "On-the-Go Control", "desc": "Stay informed about account activity in real time." },
+      { "number": "02.", "title": "Faster Decisions", "desc": "Approve payments and respond to banking needs promptly." },
+      { "number": "03.", "title": "Always Connected", "desc": "Access essential services outside office hours." }
+    ],
+    "faqs": [
+      { "question": "Is mobile banking available for business accounts?", "answer": "Yes. Eligible business accounts can be enrolled for mobile banking access." },
+      { "question": "Which devices are supported?", "answer": "Azania Bank mobile banking is available on supported smartphones through our official app." },
+      { "question": "What if I lose my phone?", "answer": "Contact Azania Bank immediately to block mobile banking access and protect your account." }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "agency-banking",
+    "title": "Agency Banking (WAKALA)",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-location",
+    "titleLarge": "Banking services closer to your business",
+    "shortDesc": "Deposit, withdraw, and access services through Azania Bank's agency network.",
+    "desc1": "Agency Banking (WAKALA) extends Azania Bank services to locations beyond traditional branches, making cash and basic transactions more accessible for businesses and their customers.",
+    "desc2": "Partner with a trusted network that supports collections, disbursements, and everyday banking in communities across Tanzania.",
+    "features": ["Cash deposits and withdrawals", "Extended service hours", "Wide agent network", "Convenient access points"],
+    "benefits": [
+      { "number": "01.", "title": "Greater Reach", "desc": "Serve customers and manage cash in more locations." },
+      { "number": "02.", "title": "Reduced Branch Dependency", "desc": "Complete basic transactions closer to your operations." },
+      { "number": "03.", "title": "Flexible Hours", "desc": "Benefit from extended availability through agency partners." }
+    ],
+    "faqs": [
+      { "question": "What is WAKALA agency banking?", "answer": "WAKALA is Azania Bank's agency banking network that provides selected banking services through authorized agents." },
+      { "question": "Can businesses use agency banking?", "answer": "Yes. Businesses can use agency points for eligible cash and transaction services." },
+      { "question": "Where can I find an agent?", "answer": "Contact your branch or visit azaniabank.co.tz for information on agency locations near you." }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "visa-card",
+    "title": "Azania VISA Card",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-add-cart",
+    "titleLarge": "Business payments with global acceptance",
+    "shortDesc": "Manage expenses, pay suppliers, and access funds with Azania VISA business cards.",
+    "desc1": "Azania VISA Cards give businesses a secure, widely accepted payment tool for purchases, travel, and operational spending.",
+    "desc2": "Set controls, track spending, and simplify expense management with card solutions tailored to business needs.",
+    "features": ["Global VISA acceptance", "Expense tracking", "Secure card controls", "Business and corporate options"],
+    "benefits": [
+      { "number": "01.", "title": "Payment Flexibility", "desc": "Pay suppliers and expenses without always using cash." },
+      { "number": "02.", "title": "Spending Visibility", "desc": "Monitor card usage for better budget control." },
+      { "number": "03.", "title": "Secure Transactions", "desc": "Benefit from VISA security features and bank oversight." }
+    ],
+    "faqs": [
+      { "question": "What types of VISA cards are available for businesses?", "answer": "Azania Bank offers business card solutions suited to different company sizes and spending needs." },
+      { "question": "Can I set limits on business cards?", "answer": "Yes. Card limits and controls can be configured based on your account arrangement." },
+      { "question": "How do I apply for a business VISA card?", "answer": "Visit any Azania Bank branch with your business documentation to apply." }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "merchant-channels",
+    "title": "Merchant Channels",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-manage",
+    "titleLarge": "Accept card and digital payments with confidence",
+    "shortDesc": "POS and merchant solutions to grow sales and simplify collections.",
+    "desc1": "Azania Bank Merchant Channels help businesses accept card payments and digital transactions at point of sale, improving customer convenience and sales conversion.",
+    "desc2": "From retail to hospitality, our merchant solutions support reliable settlement and reporting for your finance team.",
+    "features": ["POS solutions", "Card payment acceptance", "Settlement to your account", "Transaction reporting"],
+    "benefits": [
+      { "number": "01.", "title": "More Payment Options", "desc": "Let customers pay the way they prefer." },
+      { "number": "02.", "title": "Reliable Settlement", "desc": "Receive funds into your business account efficiently." },
+      { "number": "03.", "title": "Sales Insights", "desc": "Use transaction reports to track performance." }
+    ],
+    "faqs": [
+      { "question": "Who can apply for merchant services?", "answer": "Registered businesses with an Azania Bank account can apply for merchant/POS solutions." },
+      { "question": "What payment types are supported?", "answer": "Supported payment types depend on your merchant setup and may include card and selected digital payments." },
+      { "question": "How long does onboarding take?", "answer": "Onboarding timelines vary by business type. Contact your branch for current processing times." }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "money-transfer",
+    "title": "Money Transfer",
+    "category": "Alternative Channels",
+    "categoryId": 1,
+    "icon": "tji-worldwide",
+    "titleLarge": "Domestic and cross-border transfers made simple",
+    "shortDesc": "Send and receive funds securely for business operations and trade.",
+    "desc1": "Azania Bank Money Transfer services support businesses that need to move funds domestically and internationally for suppliers, payroll, and trade.",
+    "desc2": "Benefit from structured processes, compliance support, and reliable execution for your business payment needs.",
+    "features": ["Domestic transfers", "International remittances", "Trade-related payments", "Secure processing"],
+    "benefits": [
+      { "number": "01.", "title": "Reliable Execution", "desc": "Move funds with confidence for operational needs." },
+      { "number": "02.", "title": "Trade Support", "desc": "Facilitate supplier and partner payments efficiently." },
+      { "number": "03.", "title": "Compliance Assured", "desc": "Transactions processed within regulatory requirements." }
+    ],
+    "faqs": [
+      { "question": "Can businesses send international transfers?", "answer": "Yes. Eligible business accounts can initiate international transfers subject to documentation and compliance checks." },
+      { "question": "What information is required?", "answer": "You will need beneficiary details, purpose of payment, and supporting documentation where applicable." },
+      { "question": "How do I initiate a transfer?", "answer": "Transfers can be initiated at branch or through approved digital channels depending on your service profile." }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "facilities",
+    "title": "Business Facilities",
+    "category": "Business Facilities",
+    "categoryId": 2,
+    "icon": "tji-process-1",
+    "titleLarge": "Financing solutions to fuel business growth",
+    "shortDesc": "Working capital, term facilities, and structured finance for SMEs and corporates.",
+    "desc1": "Azania Bank Business Facilities provide the funding your enterprise needs to expand operations, manage cash flow, and seize opportunities.",
+    "desc2": "Our relationship managers work with you to structure facilities aligned to your business cycle, sector, and growth plans.",
+    "features": ["Working capital facilities", "Term loans and structured finance", "Sector-specific solutions", "Dedicated relationship support"],
+    "benefits": [
+      { "number": "01.", "title": "Growth Capital", "desc": "Access funding to invest in expansion and operations." },
+      { "number": "02.", "title": "Flexible Structures", "desc": "Facilities tailored to your business model and cash flow." },
+      { "number": "03.", "title": "Expert Guidance", "desc": "Work with experienced bankers who understand your sector." }
+    ],
+    "faqs": [
+      { "question": "What business facilities does Azania Bank offer?", "answer": "We offer overdrafts, term loans, project financing, SME loans, trade finance, and sector-specific facilities." },
+      { "question": "What documents are required?", "answer": "Requirements typically include business registration, financial statements, and facility-specific documentation." },
+      { "question": "How do I apply?", "answer": "Contact your branch or relationship manager to discuss your needs and begin the application process." }
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "overdraft",
+    "title": "Overdraft Facilities",
+    "category": "Business Facilities",
+    "categoryId": 2,
+    "icon": "tji-budget",
+    "titleLarge": "Flexible short-term working capital",
+    "shortDesc": "Bridge cash flow gaps with an approved overdraft on your business account.",
+    "desc1": "Overdraft facilities give your business breathing room when receivables and payables don't align. Access approved funds within your limit as needed.",
+    "desc2": "Ideal for managing seasonal demand, supplier payments, and unexpected operational expenses.",
+    "features": ["Pre-approved limit", "Pay interest on usage", "Linked to business account", "Quick access to funds"],
+    "benefits": [
+      { "number": "01.", "title": "Cash Flow Buffer", "desc": "Cover short-term gaps without disrupting operations." },
+      { "number": "02.", "title": "Flexible Usage", "desc": "Draw and repay within your approved limit." },
+      { "number": "03.", "title": "Operational Continuity", "desc": "Keep paying suppliers and staff on schedule." }
+    ],
+    "faqs": [
+      { "question": "How is overdraft interest calculated?", "answer": "Interest is charged on the amount utilized for the period of usage, as per your facility terms." },
+      { "question": "Who qualifies for a business overdraft?", "answer": "Qualification depends on account history, business performance, and credit assessment." },
+      { "question": "Can my overdraft limit be reviewed?", "answer": "Yes. Limits can be reviewed periodically based on business performance and relationship history." }
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "project-financing",
+    "title": "Project Financing",
+    "category": "Business Facilities",
+    "categoryId": 2,
+    "icon": "tji-strategy",
+    "titleLarge": "Fund capital projects with structured support",
+    "shortDesc": "Long-term financing for infrastructure, expansion, and major investments.",
+    "desc1": "Project Financing from Azania Bank supports businesses undertaking significant capital investments with structured repayment aligned to project cash flows.",
+    "desc2": "From construction to equipment acquisition, we help you finance projects that drive long-term value.",
+    "features": ["Long-term tenors", "Milestone-based disbursement", "Project evaluation support", "Structured repayment"],
+    "benefits": [
+      { "number": "01.", "title": "Major Investment Support", "desc": "Finance large projects without depleting working capital." },
+      { "number": "02.", "title": "Aligned Repayment", "desc": "Structures matched to project revenue generation." },
+      { "number": "03.", "title": "Professional Assessment", "desc": "Benefit from thorough project and risk evaluation." }
+    ],
+    "faqs": [
+      { "question": "What projects can be financed?", "answer": "Eligible projects include infrastructure, manufacturing expansion, real estate development, and other capital investments." },
+      { "question": "What is the typical tenor?", "answer": "Tenors depend on project type and cash flow projections, and are agreed during facility structuring." },
+      { "question": "What documentation is needed?", "answer": "A project proposal, financial projections, legal documents, and collateral details are typically required." }
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "sme-loans",
+    "title": "SME Loans",
+    "category": "Business Facilities",
+    "categoryId": 2,
+    "icon": "tji-performance",
+    "titleLarge": "Financing built for small and medium enterprises",
+    "shortDesc": "Accessible loan products to help SMEs grow, stock up, and invest.",
+    "desc1": "Azania Bank SME Loans are designed for the unique needs of small and medium enterprises — from working capital to equipment and expansion funding.",
+    "desc2": "We combine practical assessment with supportive terms to help Tanzanian businesses scale sustainably.",
+    "features": ["Working capital loans", "Asset and equipment finance", "Simplified application process", "Dedicated SME support"],
+    "benefits": [
+      { "number": "01.", "title": "Accessible Funding", "desc": "Loan products suited to SME scale and needs." },
+      { "number": "02.", "title": "Business Growth", "desc": "Invest in inventory, equipment, and expansion." },
+      { "number": "03.", "title": "Local Expertise", "desc": "Bankers who understand the SME landscape in Tanzania." }
+    ],
+    "faqs": [
+      { "question": "Who qualifies as an SME?", "answer": "SME classification depends on business size, turnover, and sector criteria as defined by Azania Bank and regulators." },
+      { "question": "What can SME loans be used for?", "answer": "Common uses include working capital, stock purchases, equipment, and business expansion." },
+      { "question": "How long does approval take?", "answer": "Timelines vary by loan type and completeness of documentation. Your branch can provide current estimates." }
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "trade-finance",
+    "title": "Trade Finance",
+    "category": "Business Facilities",
+    "categoryId": 2,
+    "icon": "tji-worldwide",
+    "titleLarge": "Support for import, export, and trade transactions",
+    "shortDesc": "Letters of credit, guarantees, and trade facilities for international business.",
+    "desc1": "Azania Bank Trade Finance helps businesses manage the risks and cash flow challenges of domestic and international trade.",
+    "desc2": "From import financing to export guarantees, our trade team supports your cross-border operations with structured solutions.",
+    "features": ["Letters of credit", "Bank guarantees", "Import and export finance", "Trade documentation support"],
+    "benefits": [
+      { "number": "01.", "title": "Risk Mitigation", "desc": "Reduce payment and performance risk in trade deals." },
+      { "number": "02.", "title": "Working Capital Relief", "desc": "Finance trade cycles without straining cash reserves." },
+      { "number": "03.", "title": "Expert Trade Support", "desc": "Access specialists who understand trade documentation." }
+    ],
+    "faqs": [
+      { "question": "What trade finance products are available?", "answer": "Products include letters of credit, bank guarantees, import/export finance, and related trade facilities." },
+      { "question": "Do I need an existing relationship with Azania Bank?", "answer": "Yes. Trade finance is typically available to businesses with an established account and credit relationship." },
+      { "question": "How do I initiate a trade transaction?", "answer": "Contact the trade services desk at your branch with your contract and shipping documentation." }
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "bancassurance",
+    "title": "Bancassurance",
+    "category": "Business Facilities",
+    "categoryId": 2,
+    "icon": "tji-eye-box",
+    "titleLarge": "Protect your business with insurance solutions",
+    "shortDesc": "Insurance products offered through Azania Bank's bancassurance partnerships.",
+    "desc1": "Bancassurance brings together banking and insurance so your business can manage risk and protect assets through convenient, trusted channels.",
+    "desc2": "Access selected insurance products alongside your banking relationship for a more complete financial solution.",
+    "features": ["Business insurance products", "Convenient access via the bank", "Trusted partner network", "Integrated service"],
+    "benefits": [
+      { "number": "01.", "title": "Risk Protection", "desc": "Safeguard business assets and operations." },
+      { "number": "02.", "title": "One-Stop Convenience", "desc": "Access insurance through your banking relationship." },
+      { "number": "03.", "title": "Trusted Partners", "desc": "Products from reputable insurance partners." }
+    ],
+    "faqs": [
+      { "question": "What is bancassurance?", "answer": "Bancassurance is the distribution of insurance products through banking channels, combining financial services in one relationship." },
+      { "question": "What insurance products are available?", "answer": "Available products depend on current partnerships and may include business asset and liability coverage." },
+      { "question": "How do I get a quote?", "answer": "Speak to your branch or relationship manager for available bancassurance products and quotations." }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "agribusiness",
+    "title": "Agribusiness Banking",
+    "category": "Business Facilities",
+    "categoryId": 2,
+    "icon": "tji-dart-board",
+    "titleLarge": "Banking solutions for agriculture and agribusiness",
+    "shortDesc": "Financing, payments, and support tailored to farmers and agribusiness value chains.",
+    "desc1": "Azania Bank Agribusiness Banking understands the seasonal and operational realities of agriculture. We offer facilities and services aligned to farming cycles and agribusiness supply chains.",
+    "desc2": "From input financing to produce marketing, we support players across the agricultural value chain.",
+    "features": ["Seasonal financing", "Input and equipment loans", "Value chain payments", "Agribusiness advisory"],
+    "benefits": [
+      { "number": "01.", "title": "Season-Aligned Finance", "desc": "Repayment structures matched to harvest and sales cycles." },
+      { "number": "02.", "title": "Value Chain Support", "desc": "Services for farmers, traders, processors, and exporters." },
+      { "number": "03.", "title": "Sector Knowledge", "desc": "Bankers who understand agricultural business dynamics." }
+    ],
+    "faqs": [
+      { "question": "Who can access agribusiness banking?", "answer": "Farmers, cooperatives, agribusiness SMEs, and larger agricultural enterprises can access relevant products." },
+      { "question": "What financing is available?", "answer": "Products may include seasonal loans, equipment finance, and working capital for agribusiness operations." },
+      { "question": "How do seasonal loans work?", "answer": "Repayment schedules are structured around planting and harvest periods to align with your cash flow." }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "advisory",
+    "title": "Advisory and Facilitation",
+    "category": "Advisory and Facilitation",
+    "categoryId": 3,
+    "icon": "tji-excellence",
+    "titleLarge": "Guidance to help your business move forward",
+    "shortDesc": "Expert advisory and facilitation services for business planning and execution.",
+    "desc1": "Azania Bank Advisory and Facilitation services connect businesses with practical guidance on financial planning, structuring, and execution.",
+    "desc2": "Whether you are expanding, restructuring, or entering new markets, our team helps you navigate key decisions.",
+    "features": ["Financial planning guidance", "Business structuring advice", "Facilitation support", "Relationship-led service"],
+    "benefits": [
+      { "number": "01.", "title": "Informed Decisions", "desc": "Make strategic choices with professional input." },
+      { "number": "02.", "title": "Execution Support", "desc": "Move from planning to action with bank facilitation." },
+      { "number": "03.", "title": "Trusted Partner", "desc": "Leverage a banking partner invested in your success." }
+    ],
+    "faqs": [
+      { "question": "What advisory services does Azania Bank provide?", "answer": "Services include business planning guidance, financial structuring advice, and facilitation for banking-related transactions." },
+      { "question": "Is advisory available to all businesses?", "answer": "Advisory services are typically available to business banking customers based on relationship and scope." },
+      { "question": "How do I request advisory support?", "answer": "Contact your relationship manager or visit your branch to discuss your advisory needs." }
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "business-advisory",
+    "title": "Business Advisory and Facilitation",
+    "category": "Advisory and Facilitation",
+    "categoryId": 3,
+    "icon": "tji-manage",
+    "titleLarge": "Hands-on support for business growth",
+    "shortDesc": "Dedicated advisory to help you plan, finance, and execute business objectives.",
+    "desc1": "Business Advisory and Facilitation goes further — providing structured support for businesses pursuing growth, partnerships, and operational improvement.",
+    "desc2": "Work with Azania Bank specialists who combine banking expertise with practical business insight.",
+    "features": ["Growth planning", "Partnership facilitation", "Transaction support", "Ongoing relationship management"],
+    "benefits": [
+      { "number": "01.", "title": "Structured Support", "desc": "Advisory aligned to defined business objectives." },
+      { "number": "02.", "title": "Network Access", "desc": "Facilitation through the bank's business network." },
+      { "number": "03.", "title": "Long-Term Partnership", "desc": "Ongoing guidance as your business evolves." }
+    ],
+    "faqs": [
+      { "question": "How is this different from general advisory?", "answer": "Business Advisory and Facilitation offers more structured, hands-on support for specific growth and transaction objectives." },
+      { "question": "Can you help with business partnerships?", "answer": "Yes. Facilitation may include introductions and support for partnership-related banking needs." },
+      { "question": "How do I engage this service?", "answer": "Speak to your relationship manager to assess fit and scope for advisory and facilitation support." }
+    ]
+  }
+]

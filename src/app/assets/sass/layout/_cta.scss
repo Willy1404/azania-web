@@ -1,0 +1,102 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: CTA CSS
+----------------------------------------*/
+.tj-cta-section {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.cta-area {
+	background-color: var(--tj-color-theme-primary);
+	position: relative;
+	z-index: 3;
+	overflow: hidden;
+	border-radius: 12px;
+	display: flex;
+	flex-wrap: wrap;
+
+	.cta-honeycomb {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		background-image: url("/images/shape/honeycomb-cta.svg");
+		background-size: 84px 97px;
+		background-repeat: repeat;
+		opacity: 0.65;
+		-webkit-mask-image: linear-gradient(
+			105deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.9) 42%,
+			rgba(0, 0, 0, 0.2) 70%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		mask-image: linear-gradient(
+			105deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.9) 42%,
+			rgba(0, 0, 0, 0.2) 70%,
+			rgba(0, 0, 0, 0) 100%
+		);
+	}
+
+	.cta-content,
+	.cta-img {
+		position: relative;
+		z-index: 1;
+	}
+
+	.cta-content {
+		width: 50%;
+		margin: 0;
+		padding: 44px 15px 60px 55px;
+		.title {
+			font-size: 74px;
+			line-height: 1.12;
+			color: var(--tj-color-common-white);
+			margin-bottom: 17px;
+
+			@media #{$xl} {
+				font-size: 62px;
+			}
+			@media #{$lg} {
+				font-size: 56px;
+			}
+			@media #{$md} {
+				font-size: 60px;
+			}
+			@media #{$sm} {
+				font-size: 50px;
+			}
+			@media #{$xs} {
+				font-size: 43px;
+			}
+		}
+		@media #{$lg} {
+			padding: 34px 15px 45px 35px;
+		}
+		@media #{$md, $sm, $xs} {
+			width: 100%;
+			padding: 34px 30px 45px 30px;
+		}
+	}
+
+	.cta-img {
+		width: 50%;
+
+		.cta-banner-img,
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: bottom center;
+		}
+
+		@media #{$md, $sm, $xs} {
+			width: 100%;
+		}
+	}
+}
+
+/* !END: CTA CSS */

@@ -1,0 +1,46 @@
+// Azania palette — keep card surfaces white so image/SVG textures stay visible.
+$colors: (
+	common: (
+		white: #ffffff,
+		black: #1e1e1e,
+		black-2: #1e1e1e,
+		black-3: #1e1e1e,
+	),
+	heading: (
+		primary: #1e1e1e,
+	),
+	text: (
+		body: #1e1e1e,
+		body-2: #d9d9d9,
+		body-3: #d9d9d9,
+		body-4: #1e1e1e,
+		body-5: #f8f8f8cc,
+	),
+	theme: (
+		primary: #1faef3,
+		bg: #f8f8f8,
+		bg-2: #7ed3f7,
+		bg-3: #1e1e1e,
+		bg6: #d9d9d9,
+		dark: #1e1e1e,
+		dark-2: #1e1e1e,
+		dark-3: #1e1e1e,
+		dark-4: #d9d9d9,
+		dark-5: #d9d9d9,
+	),
+	red: (
+		1: #ff0000,
+	),
+	grey: (
+		1: #f8f8f8,
+		2: #d9d9d9,
+		3: #f8f8f81a,
+	),
+	border: (
+		1: #d9d9d9,
+		2: #d9d9d9,
+		3: #f8f8f826,
+		4: #f8f8f833,
+		5: #1faef326,
+	),
+);

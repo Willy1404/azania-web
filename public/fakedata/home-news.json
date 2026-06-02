@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"title": "Your bank is now on WhatsApp",
+		"excerpt": "Use your mobile phone to easily manage your account at any time. Send money, check balances, and get support through WhatsApp Banking.",
+		"img": "/images/m1.png",
+		"url": "/business-banking/whatsapp-banking"
+	},
+	{
+		"id": 2,
+		"title": "The official inauguration of our new branch in Geita!",
+		"excerpt": "Azania Bank continues to expand its footprint to serve you better. Visit our new Geita branch for personal and business banking services.",
+		"img": "/images/m2.png",
+		"url": "/about"
+	},
+	{
+		"id": 3,
+		"title": "Competitive forex rates at your nearest branch",
+		"excerpt": "Whether you are travelling, trading, or sending remittances, enjoy favorable buying and selling rates on major currencies at Azania Bank.",
+		"img": "/images/m3.png",
+		"url": "/treasury-and-capital/forex"
+	}
+]

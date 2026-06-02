@@ -1,0 +1,127 @@
+[
+  { "id": 1, "name": "Home", "path": "/" },
+  {
+    "id": 2,
+    "name": "Business Banking",
+    "path": "/business-banking",
+    "submenu": [
+      {
+        "id": 1,
+        "name": "Alternative Channels",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Alternative Channels", "path": "/business-banking/alternative-channels", "badge": null, "icon": "tji-operations" },
+          { "id": 2, "name": "Azania LIPA", "path": "/business-banking/azania-lipa", "badge": null, "icon": "tji-budget" },
+          { "id": 3, "name": "WhatsApp Banking", "path": "/business-banking/whatsapp-banking", "badge": null, "icon": "tji-comment" },
+          { "id": 4, "name": "Internet Banking", "path": "/business-banking/internet-banking", "badge": null, "icon": "tji-worldwide" },
+          { "id": 5, "name": "Mobile Banking", "path": "/business-banking/mobile-banking", "badge": null, "icon": "tji-phone" },
+          { "id": 6, "name": "Agency Banking (WAKALA)", "path": "/business-banking/agency-banking", "badge": null, "icon": "tji-location" },
+          { "id": 7, "name": "Azania VISA Card", "path": "/business-banking/visa-card", "badge": null, "icon": "tji-add-cart" },
+          { "id": 8, "name": "Merchant Channels", "path": "/business-banking/merchant-channels", "badge": null, "icon": "tji-manage" },
+          { "id": 9, "name": "Money Transfer", "path": "/business-banking/money-transfer", "badge": null, "icon": "tji-worldwide" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Business Facilities",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Business Facilities", "path": "/business-banking/facilities", "badge": null, "icon": "tji-process-1" },
+          { "id": 2, "name": "Overdraft Facilities", "path": "/business-banking/overdraft", "badge": null, "icon": "tji-budget" },
+          { "id": 3, "name": "Project Financing", "path": "/business-banking/project-financing", "badge": null, "icon": "tji-strategy" },
+          { "id": 4, "name": "SME Loans", "path": "/business-banking/sme-loans", "badge": null, "icon": "tji-performance" },
+          { "id": 5, "name": "Trade Finance", "path": "/business-banking/trade-finance", "badge": null, "icon": "tji-worldwide" },
+          { "id": 6, "name": "Bancassurance", "path": "/business-banking/bancassurance", "badge": null, "icon": "tji-eye-box" },
+          { "id": 7, "name": "Agribusiness Banking", "path": "/business-banking/agribusiness", "badge": null, "icon": "tji-dart-board" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Advisory and Facilitation",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Advisory and Facilitation", "path": "/business-banking/advisory", "badge": null, "icon": "tji-excellence" },
+          { "id": 2, "name": "Business Advisory and Facilitation", "path": "/business-banking/business-advisory", "badge": null, "icon": "tji-manage" }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Open an Account",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Open an Account", "path": "/open-account", "badge": null, "icon": "tji-user" },
+          { "id": 2, "name": "Download Form", "path": "/open-account/download-form", "badge": null, "icon": "tji-envelop" },
+          { "id": 3, "name": "Apply for Internet Banking", "path": "/open-account/internet-banking", "badge": null, "icon": "tji-worldwide" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Personal Banking",
+    "path": "/personal-banking",
+    "submenu": [
+      { "id": 1, "name": "For The Future", "path": "#", "items": [{ "id": 1, "name": "For The Future", "path": "/personal-banking/for-the-future", "badge": null, "icon": "tji-strategy" }] },
+      { "id": 2, "name": "For Today", "path": "#", "items": [{ "id": 1, "name": "For Today", "path": "/personal-banking/for-today", "badge": null, "icon": "tji-operations" }] },
+      { "id": 3, "name": "For The Family", "path": "#", "items": [{ "id": 1, "name": "For The Family", "path": "/personal-banking/for-the-family", "badge": null, "icon": "tji-user" }] },
+      {
+        "id": 4,
+        "name": "Quick Links",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Loans", "path": "/personal-banking/loans", "badge": null, "icon": "tji-budget" },
+          { "id": 2, "name": "Open an Account", "path": "/open-account", "badge": null, "icon": "tji-user" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Treasury & Capital",
+    "path": "/treasury-and-capital",
+    "submenu": [
+      {
+        "id": 1,
+        "name": "Treasury & Capital",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Azania Capital Limited", "path": "/treasury-and-capital/azania-capital-limited", "badge": null, "icon": "tji-manage" },
+          { "id": 2, "name": "FOREX", "path": "/treasury-and-capital/forex", "badge": null, "icon": "tji-worldwide" },
+          { "id": 3, "name": "Capital Market Services", "path": "/treasury-and-capital/capital-market-services", "badge": null, "icon": "tji-performance" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "About Azania Bank",
+    "path": "/about-azania-bank",
+    "submenu": [
+      {
+        "id": 1,
+        "name": "About Azania Bank",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "About Azania Bank", "path": "/about", "badge": null, "icon": "tji-excellence" },
+          { "id": 2, "name": "Financial & Regulatory Reports", "path": "/reports", "badge": null, "icon": "tji-budget" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Support",
+    "path": "/support",
+    "submenu": [
+      {
+        "id": 1,
+        "name": "Support",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Tariff Guide", "path": "/support/tariff-guide", "badge": null, "icon": "tji-envelop" },
+          { "id": 2, "name": "Frequently Asked Questions", "path": "/faq", "badge": null, "icon": "tji-comment" }
+        ]
+      }
+    ]
+  }
+]

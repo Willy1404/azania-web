@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "slug": "for-the-future",
+    "title": "For The Future",
+    "category": "For The Future",
+    "categoryId": 1,
+    "icon": "tji-strategy",
+    "titleLarge": "Plan ahead with savings and investment solutions",
+    "shortDesc": "Build long-term financial security with savings accounts, fixed deposits, and investment options.",
+    "desc1": "Azania Bank helps you prepare for tomorrow with personal savings and investment products designed to grow your wealth steadily over time.",
+    "desc2": "Whether you are saving for education, retirement, or a major life goal, our For The Future solutions give you flexible options with competitive returns.",
+    "features": ["Savings accounts", "Fixed and term deposits", "Goal-based saving plans", "Investment advisory support"],
+    "benefits": [
+      { "number": "01.", "title": "Long-Term Growth", "desc": "Grow your savings with structured deposit and investment options." },
+      { "number": "02.", "title": "Financial Security", "desc": "Build a safety net for future needs and unexpected events." },
+      { "number": "03.", "title": "Flexible Plans", "desc": "Choose tenors and products that match your goals and timeline." }
+    ],
+    "faqs": [
+      { "question": "What savings products are available?", "answer": "We offer regular savings accounts, fixed deposits, and goal-based savings plans for personal customers." },
+      { "question": "What is the minimum deposit for a fixed deposit?", "answer": "Minimum amounts vary by product. Visit your branch or contact us for current rates and requirements." },
+      { "question": "Can I open a savings account online?", "answer": "You can start the process at any Azania Bank branch with valid identification and required documentation." }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "for-today",
+    "title": "For Today",
+    "category": "For Today",
+    "categoryId": 2,
+    "icon": "tji-operations",
+    "titleLarge": "Everyday banking made simple",
+    "shortDesc": "Current accounts, debit cards, and digital tools for your daily financial needs.",
+    "desc1": "For Today is about managing your money with ease — paying bills, receiving salary, transferring funds, and accessing cash when you need it.",
+    "desc2": "Azania Bank personal accounts come with mobile and internet banking, VISA cards, and a reliable branch and agency network across Tanzania.",
+    "features": ["Current and salary accounts", "Azania VISA debit cards", "Mobile and internet banking", "Bill payments and transfers"],
+    "benefits": [
+      { "number": "01.", "title": "Daily Convenience", "desc": "Manage everyday transactions quickly and securely." },
+      { "number": "02.", "title": "Digital Access", "desc": "Bank from your phone or computer anytime, anywhere." },
+      { "number": "03.", "title": "Wide Network", "desc": "Access services through branches, ATMs, and agency points." }
+    ],
+    "faqs": [
+      { "question": "What do I need to open a personal current account?", "answer": "Valid identification, proof of address, and completed account opening forms are required." },
+      { "question": "Is mobile banking free?", "answer": "Mobile banking enrollment is available to account holders. Standard transaction fees may apply as per the tariff guide." },
+      { "question": "Can I get a debit card with my account?", "answer": "Yes. Eligible personal accounts can be linked to an Azania VISA debit card." }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "for-the-family",
+    "title": "For The Family",
+    "category": "For The Family",
+    "categoryId": 3,
+    "icon": "tji-user",
+    "titleLarge": "Banking solutions for your whole family",
+    "shortDesc": "Joint accounts, children's savings, and family-focused financial products.",
+    "desc1": "For The Family brings together accounts and savings options that help households manage shared finances and plan for children and dependents.",
+    "desc2": "From joint accounts for couples to junior savings for children, Azania Bank supports families at every stage.",
+    "features": ["Joint accounts", "Children's savings accounts", "Family financial planning", "Shared account management"],
+    "benefits": [
+      { "number": "01.", "title": "Shared Management", "desc": "Joint accounts allow couples and partners to manage finances together." },
+      { "number": "02.", "title": "Children's Future", "desc": "Start saving early for education and other family goals." },
+      { "number": "03.", "title": "One Bank, One Family", "desc": "Consolidate family banking with a trusted local partner." }
+    ],
+    "faqs": [
+      { "question": "Can I open a joint account?", "answer": "Yes. Joint accounts are available for two or more account holders with agreed signatory arrangements." },
+      { "question": "Is there a savings account for children?", "answer": "Yes. We offer junior savings accounts designed for minors, managed by a parent or guardian." },
+      { "question": "How many signatories can a joint account have?", "answer": "Signatory arrangements depend on account type. Your branch can explain available options." }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "loans",
+    "title": "Loans",
+    "category": "Quick Links",
+    "categoryId": 4,
+    "icon": "tji-budget",
+    "titleLarge": "Personal loans to meet your goals",
+    "shortDesc": "Salary advances, personal loans, and asset finance for individuals.",
+    "desc1": "Azania Bank personal loans help you finance education, home improvements, emergencies, and other personal needs with structured repayment plans.",
+    "desc2": "Our loan products are designed with transparent terms and assessment processes that consider your income and repayment capacity.",
+    "features": ["Personal loans", "Salary advance facilities", "Asset and vehicle finance", "Competitive interest rates"],
+    "benefits": [
+      { "number": "01.", "title": "Flexible Purpose", "desc": "Finance education, medical needs, home improvements, and more." },
+      { "number": "02.", "title": "Structured Repayment", "desc": "Clear schedules aligned to your salary or income cycle." },
+      { "number": "03.", "title": "Quick Assessment", "desc": "Efficient processing for eligible personal loan applicants." }
+    ],
+    "faqs": [
+      { "question": "Who qualifies for a personal loan?", "answer": "Qualification depends on income, employment status, credit history, and ability to repay. Visit your branch for assessment." },
+      { "question": "What documents are required?", "answer": "Typically ID, proof of income, bank statements, and completed loan application forms." },
+      { "question": "How long does approval take?", "answer": "Timelines vary by loan type and documentation completeness. Your branch can provide current estimates." }
+    ]
+  }
+]

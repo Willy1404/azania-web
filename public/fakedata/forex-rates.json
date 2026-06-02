@@ -1,0 +1,17 @@
+{
+	"updatedAt": "Rates from Fri May 29 2026",
+	"title": "Foreign Exchange Rate",
+	"subtitle": "Visit our nearest branch and enjoy favorable rates",
+	"branchCta": {
+		"text": "Find A Branch Near You",
+		"url": "/support"
+	},
+	"rates": [
+		{ "pair": "GBP/TZS", "buying": 3490, "selling": 3688, "flag": "gb" },
+		{ "pair": "EUR/TZS", "buying": 2904, "selling": 3193, "flag": "eu" },
+		{ "pair": "KES/TZS", "buying": 19.31, "selling": 24.26, "flag": "ke" },
+		{ "pair": "ZAR/TZS", "buying": 152.54, "selling": 173.48, "flag": "za" },
+		{ "pair": "JPY/TZS", "buying": 16.05, "selling": 19.81, "flag": "jp" },
+		{ "pair": "INR/TZS", "buying": 28.18, "selling": 29.18, "flag": "in" }
+	]
+}

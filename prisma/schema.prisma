@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum Role {
+  ADMIN
+  BUSINESS_BANKING
+  PERSONAL_BANKING
+  TREASURY_CAPITAL
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContentEntry {
+  id         String   @id @default(cuid())
+  contentKey String
+  slug       String?
+  data       String
+  updatedAt  DateTime @updatedAt
+  updatedBy  String?
+
+  @@unique([contentKey, slug])
+  @@index([contentKey])
+}

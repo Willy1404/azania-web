@@ -1,8 +1,12 @@
-import prisma from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 
 const SINGLE_SLUG = "__single__";
 
 export async function getContentCollection(contentKey, fallback = []) {
+	const prisma = getPrisma();
+	if (!prisma) return fallback;
+
+	try {
 	const entries = await prisma.contentEntry.findMany({
 		where: { contentKey },
 		orderBy: { slug: "asc" },
@@ -20,9 +24,17 @@ export async function getContentCollection(contentKey, fallback = []) {
 		})
 		.filter(Boolean)
 		.sort((a, b) => (a.id || 0) - (b.id || 0));
+	} catch (error) {
+		console.error(`[cms] getContentCollection(${contentKey}):`, error);
+		return fallback;
+	}
 }
 
 export async function getContentSingleton(contentKey, fallback = null) {
+	const prisma = getPrisma();
+	if (!prisma) return fallback;
+
+	try {
 	const entry = await prisma.contentEntry.findUnique({
 		where: {
 			contentKey_slug: {
@@ -39,6 +51,10 @@ export async function getContentSingleton(contentKey, fallback = null) {
 	} catch {
 		return fallback;
 	}
+	} catch (error) {
+		console.error(`[cms] getContentSingleton(${contentKey}):`, error);
+		return fallback;
+	}
 }
 
 export async function saveContentCollectionItem({
@@ -47,6 +63,8 @@ export async function saveContentCollectionItem({
 	data,
 	updatedBy,
 }) {
+	const prisma = getPrisma();
+	if (!prisma) throw new Error("Database unavailable");
 	return prisma.contentEntry.upsert({
 		where: {
 			contentKey_slug: { contentKey, slug },
@@ -65,6 +83,8 @@ export async function saveContentCollectionItem({
 }
 
 export async function saveContentSingleton({ contentKey, data, updatedBy }) {
+	const prisma = getPrisma();
+	if (!prisma) throw new Error("Database unavailable");
 	return prisma.contentEntry.upsert({
 		where: {
 			contentKey_slug: {
@@ -90,6 +110,8 @@ export async function saveContentCollectionBulk({
 	items,
 	updatedBy,
 }) {
+	const prisma = getPrisma();
+	if (!prisma) throw new Error("Database unavailable");
 	await prisma.$transaction(async (tx) => {
 		await tx.contentEntry.deleteMany({ where: { contentKey } });
 		for (const item of items) {

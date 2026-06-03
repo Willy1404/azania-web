@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
-import prisma from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import { canAccessPortal } from "@/lib/cms/portals";
 
 const SESSION_COOKIE = "azania_manage_session";
@@ -65,6 +65,9 @@ export async function clearSession() {
 }
 
 export async function loginUser({ email, password, portalId }) {
+	const prisma = getPrisma();
+	if (!prisma) return { error: "Database is temporarily unavailable." };
+
 	const user = await prisma.user.findUnique({ where: { email } });
 	if (!user) return { error: "Invalid email or password." };
 

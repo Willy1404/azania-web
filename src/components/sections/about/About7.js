@@ -81,7 +81,7 @@ const About7 = () => {
 														className="about-btn-area-2 wow fadeInUp"
 														data-wow-delay="1s"
 													>
-														<ButtonPrimary text={"Learn More"} url={"/about"} />
+														<ButtonPrimary text={"Learn More"} url={"/about-azania-bank"} />
 													</div>
 												</div>
 											</div>

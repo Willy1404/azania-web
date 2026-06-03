@@ -78,7 +78,7 @@ const Hero8 = () => {
 										alt="Azania Bank"
 									/>
 								</div>
-								<Link href="/services" className="circle-text-wrap">
+								<Link href="/business-banking" className="circle-text-wrap">
 									<span className="desc">
 										Our Services <i className="tji-arrow-right-long"></i>
 									</span>

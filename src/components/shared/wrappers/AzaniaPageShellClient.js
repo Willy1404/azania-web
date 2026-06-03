@@ -1,30 +1,29 @@
-import Footer from "@/components/layout/footer/Footer";
+"use client";
+
+import Footer8 from "@/components/layout/footer/Footer8";
 import Header from "@/components/layout/header/Header";
-import Cta from "@/components/sections/cta/Cta";
-import HeroInner from "@/components/sections/hero/HeroInner";
-import Team1 from "@/components/sections/teams/Team1";
 import BackToTop from "@/components/shared/others/BackToTop";
 import HeaderSpace from "@/components/shared/others/HeaderSpace";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
-export default function Team() {
+
+const AzaniaPageShellClient = ({ children, navItems = [] }) => {
 	return (
 		<div>
 			<BackToTop />
-			<Header />
-			<Header isStickyHeader={true} />
+			<Header headerType={8} navItems={navItems} />
+			<Header headerType={8} isStickyHeader={true} navItems={navItems} />
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>
 						<HeaderSpace />
-						<HeroInner title={"Team"} text={"Team"} />
-						<Team1 type={2} />
-						<Cta />
+						{children}
 					</main>
-					<Footer />
+					<Footer8 />
 				</div>
 			</div>
-
 			<ClientWrapper />
 		</div>
 	);
-}
+};
+
+export default AzaniaPageShellClient;

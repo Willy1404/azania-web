@@ -98,7 +98,7 @@ const TreasuryCapitalHub = ({ pages = [] }) => {
 									Azania Capital services, contact our specialist team.
 								</p>
 								<div className="wow fadeInUp mt-4">
-									<ButtonPrimary text={"Contact Treasury"} url={"/contact"} />
+									<ButtonPrimary text={"Contact Treasury"} url={"/support"} />
 								</div>
 							</div>
 						</div>

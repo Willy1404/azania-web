@@ -60,7 +60,7 @@ const SectionDetailsCorporate = ({ option }) => {
 								/>
 							</div>
 							<div className="text-lg-end">
-								<Link href="/contact" className="tj-primary-btn">
+								<Link href="/support" className="tj-primary-btn">
 									<span className="btn-text">
 										<span>Contact Treasury</span>
 									</span>

@@ -42,7 +42,7 @@ const Services8 = () => {
 				<div className="row">
 					<div className="col-12">
 						<div className="h8-service-more wow fadeInUp" data-wow-delay=".8s">
-							<ButtonPrimary text={"View all services"} url={"/services"} />
+							<ButtonPrimary text={"View all services"} url={"/business-banking"} />
 						</div>
 					</div>
 				</div>

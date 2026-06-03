@@ -90,25 +90,25 @@ const Footer8 = () => {
 								className="footer-widget footer-col-2 widget-nav-menu h6-footer-col-2  h8-footer-col-2 wow fadeInUp"
 								data-wow-delay=".4s"
 							>
-								<h5 className="title">Services</h5>
+								<h5 className="title">Banking</h5>
 								<ul>
 									<li>
-										<Link href="/services/1">Customer Experience</Link>
+										<Link href="/personal-banking">Personal Banking</Link>
 									</li>
 									<li>
-										<Link href="/services/2">Training Programs</Link>
+										<Link href="/business-banking">Business Banking</Link>
 									</li>
 									<li>
-										<Link href="/services/3">Business Strategy</Link>
+										<Link href="/treasury-and-capital">Treasury &amp; Capital</Link>
 									</li>
 									<li>
-										<Link href="/services/4">Training Program</Link>
+										<Link href="/open-account">Open an Account</Link>
 									</li>
 									<li>
-										<Link href="/services/5">ESG Consulting</Link>
+										<Link href="/support">Support</Link>
 									</li>
 									<li>
-										<Link href="/services/6">Development Hub</Link>
+										<Link href="/reports">Reports</Link>
 									</li>
 								</ul>
 							</div>
@@ -121,24 +121,19 @@ const Footer8 = () => {
 								<h5 className="title">Resources</h5>
 								<ul>
 									<li>
-										<Link href="/contact">Contact us</Link>
+										<Link href="/support">Contact &amp; Support</Link>
 									</li>
 									<li>
-										<Link href="/team">Team Member</Link>
+										<Link href="/about-azania-bank">About Azania Bank</Link>
 									</li>
 									<li>
-										<Link href="#">Recognitions</Link>
+										<Link href="/faq">FAQs</Link>
 									</li>
 									<li>
-										<Link href="/careers">
-											Careers <span className="badge">New</span>
-										</Link>
+										<Link href="/support/tariff-guide">Tariff Guide</Link>
 									</li>
 									<li>
-										<Link href="/blogs">News</Link>
-									</li>
-									<li>
-										<Link href="#">Feedback</Link>
+										<Link href="/reports">News &amp; Reports</Link>
 									</li>
 								</ul>
 							</div>

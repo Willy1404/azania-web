@@ -25,7 +25,7 @@ const Funfact3 = async () => {
 							<div className="azania-news-forex__cta wow fadeInUp" data-wow-delay=".4s">
 								<ButtonPrimary
 									text={"Explore News & Insight"}
-									url={"/blogs"}
+									url={"/reports"}
 									className={"transparent-btn azania-outline-btn"}
 								/>
 							</div>

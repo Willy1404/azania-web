@@ -30,7 +30,7 @@ const AboutAzaniaHub = () => {
 				<div className="container">
 					<div className="row row-gap-4">
 						<div className="col-lg-6">
-							<Link href="/about" className="azania-portal-card azania-portal-card--about wow fadeInUp">
+							<Link href="/about-azania-bank" className="azania-portal-card azania-portal-card--about wow fadeInUp">
 								<div className="portal-icon">
 									<i className="tji-excellence"></i>
 								</div>

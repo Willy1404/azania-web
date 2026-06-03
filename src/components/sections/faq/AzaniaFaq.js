@@ -22,7 +22,7 @@ const AzaniaFaq = ({ faqItems = [] }) => {
 								accounts, cards, digital banking, and services.
 							</p>
 							<div className="wow fadeInUp" data-wow-delay=".8s">
-								<ButtonPrimary text={"Contact Support"} url={"/contact"} />
+								<ButtonPrimary text={"Contact Support"} url={"/support"} />
 							</div>
 						</div>
 					</div>

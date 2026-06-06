@@ -1,4 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const FOOTER_LOGO_SRC = "/images/AB-FooterLogo.png";
 
 const Footer8 = () => {
 	return (
@@ -11,21 +14,29 @@ const Footer8 = () => {
 								<div className="h6-footer-logo h8-footer-logo">
 									<Link
 										href="/"
-										className="wow fadeInLeftBig"
+										className="wow fadeInRightBig"
 										data-wow-delay=".3s"
 									>
-										<img src="/images/logos/azanialogo.png" alt="Azania Bank" />
+										<Image
+											className="azania-footer-logo"
+											src={FOOTER_LOGO_SRC}
+											alt="Azania Bank"
+											width={534}
+											height={98}
+											priority
+											unoptimized
+										/>
 									</Link>
 								</div>
 								<div
-									className="h8-footer-logo-content wow fadeInRightBig"
+									className="h8-footer-logo-content wow fadeInLeftBig"
 									data-wow-delay=".4s"
 								>
 									<div className="footer-text">
 										<p>
-											Azania Bank delivers personal, business, and digital
-											banking solutions designed to help you manage money with
-											confidence and clarity.
+											Developing personalze our customer journeys to increase
+											satisfaction & loyalty of our expansion. Bexon has been a
+											game.
 										</p>
 									</div>
 									<div className="social-links style-3">
@@ -69,17 +80,17 @@ const Footer8 = () => {
 								<h5 className="title">Our Office</h5>
 								<div className="footer-contact-info">
 									<div className="contact-item">
-										<span>Dar es Salaam, Tanzania.</span>
+										<span>993 Renner Burg, West Rond, MT 94251-030, USA.</span>
 									</div>
 									<div className="contact-item">
-										<Link href="tel:+255000000000">P: +255 000 000 000</Link>
-										<Link href="mailto:info@azaniabank.co.tz">
-											M: info@azaniabank.co.tz
+										<Link href="tel:10095447818">P: +1 (009) 544-7818</Link>
+										<Link href="mailto:support@bexon.com">
+											M: support@bexon.com
 										</Link>
 									</div>
 									<div className="contact-item">
 										<span>
-											<i className="tji-clock"></i> Mon-Fri 8am-5pm
+											<i className="tji-clock"></i> Mon-Fri 10am-10pm
 										</span>
 									</div>
 								</div>
@@ -90,25 +101,25 @@ const Footer8 = () => {
 								className="footer-widget footer-col-2 widget-nav-menu h6-footer-col-2  h8-footer-col-2 wow fadeInUp"
 								data-wow-delay=".4s"
 							>
-								<h5 className="title">Banking</h5>
+								<h5 className="title">Services</h5>
 								<ul>
 									<li>
-										<Link href="/personal-banking">Personal Banking</Link>
+										<Link href="/services/1">Customer Experience</Link>
 									</li>
 									<li>
-										<Link href="/business-banking">Business Banking</Link>
+										<Link href="/services/2">Training Programs</Link>
 									</li>
 									<li>
-										<Link href="/treasury-and-capital">Treasury &amp; Capital</Link>
+										<Link href="/services/3">Business Strategy</Link>
 									</li>
 									<li>
-										<Link href="/open-account">Open an Account</Link>
+										<Link href="/services/4">Training Program</Link>
 									</li>
 									<li>
-										<Link href="/support">Support</Link>
+										<Link href="/services/5">ESG Consulting</Link>
 									</li>
 									<li>
-										<Link href="/reports">Reports</Link>
+										<Link href="/services/6">Development Hub</Link>
 									</li>
 								</ul>
 							</div>
@@ -121,19 +132,24 @@ const Footer8 = () => {
 								<h5 className="title">Resources</h5>
 								<ul>
 									<li>
-										<Link href="/support">Contact &amp; Support</Link>
+										<Link href="/contact">Contact us</Link>
 									</li>
 									<li>
-										<Link href="/about-azania-bank">About Azania Bank</Link>
+										<Link href="/team">Team Member</Link>
 									</li>
 									<li>
-										<Link href="/faq">FAQs</Link>
+										<Link href="#">Recognitions</Link>
 									</li>
 									<li>
-										<Link href="/support/tariff-guide">Tariff Guide</Link>
+										<Link href="/careers">
+											Careers <span className="badge">New</span>
+										</Link>
 									</li>
 									<li>
-										<Link href="/reports">News &amp; Reports</Link>
+										<Link href="/blogs">News</Link>
+									</li>
+									<li>
+										<Link href="#">Feedback</Link>
 									</li>
 								</ul>
 							</div>
@@ -177,8 +193,14 @@ const Footer8 = () => {
 							<div className="copyright-content-area">
 								<div className="copyright-text">
 									<p>
-										&copy; 2026{" "}
-										<Link href="/">Azania Bank</Link>. All rights reserved.
+										&copy; 2025{" "}
+										<Link
+											href="https://themeforest.net/user/theme-junction/portfolio"
+											target="_blank"
+										>
+											Bexon
+										</Link>{" "}
+										All right reserved
 									</p>
 								</div>
 							</div>
@@ -187,16 +209,16 @@ const Footer8 = () => {
 				</div>
 			</div>
 			<div className="bg-shape-1">
-				<img src="/images/shape/pattern-2.svg" alt="Azania Bank" />
+				<img src="/images/shape/pattern-2.svg" alt="" />
 			</div>
 			<div className="bg-shape-2">
-				<img src="/images/shape/pattern-3.svg" alt="Azania Bank" />
+				<img src="/images/shape/pattern-3.svg" alt="" />
 			</div>
 			<div className="bg-shape-3 wow fadeInUpBig" data-wow-delay="1s">
-				<img src="/images/shape/h8-footer-shape-blur-1.svg" alt="Azania Bank" />
+				<img src="/images/shape/h8-footer-shape-blur-1.svg" alt="" />
 			</div>
 			<div className="bg-shape-4 wow fadeInDownBig" data-wow-delay=".8s">
-				<img src="/images/shape/h8-footer-shape-blur-2.svg" alt="Azania Bank" />
+				<img src="/images/shape/h8-footer-shape-blur-2.svg" alt="" />
 			</div>
 		</footer>
 	);

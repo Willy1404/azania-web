@@ -1,4 +1,5 @@
 @use "../utilities" as *;
+@use "azania-shared" as azania;
 
 .azania-section-intro {
 	background-color: var(--tj-color-theme-bg);
@@ -565,8 +566,6 @@
 }
 
 // Home — News & Insight + Forex rates
-$azania-forex-gold: #e8b923;
-
 .azania-news-forex {
 	&__intro {
 		margin-bottom: 28px;
@@ -609,7 +608,7 @@ $azania-forex-gold: #e8b923;
 		display: inline-block;
 		width: 48px;
 		height: 2px;
-		background-color: $azania-forex-gold;
+		background-color: azania.$brand-gold;
 		flex-shrink: 0;
 	}
 }
@@ -691,7 +690,7 @@ $azania-forex-gold: #e8b923;
 		gap: 8px;
 		font-size: 14px;
 		font-weight: var(--tj-fw-sbold);
-		color: $azania-forex-gold;
+		color: azania.$brand-gold;
 
 		i {
 			font-size: 14px;
@@ -801,7 +800,7 @@ $azania-forex-gold: #e8b923;
 		gap: 10px;
 		width: 100%;
 		padding: 16px 20px;
-		background-color: $azania-forex-gold;
+		background-color: azania.$brand-gold;
 		color: var(--tj-color-heading-primary);
 		font-size: 15px;
 		font-weight: var(--tj-fw-sbold);
@@ -876,7 +875,7 @@ $azania-forex-gold: #e8b923;
 		color: rgba(255, 255, 255, 0.92);
 
 		strong {
-			color: $azania-forex-gold;
+			color: azania.$brand-gold;
 			font-weight: var(--tj-fw-sbold);
 		}
 	}
@@ -892,126 +891,148 @@ $azania-forex-gold: #e8b923;
 	}
 }
 
-// Compact CTA — short card height; swap image when ready
-main:has(.tj-cta-section) {
-	.tj-cta-section {
-		margin-bottom: -120px;
+// Bexon Home 08 footer — original teal base (not flat Azania #1e1e1e)
+.tj-footer-section.footer-2.h8-footer {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	background-color: #0c1e21;
+	background-image: linear-gradient(
+		180deg,
+		#18292c 0%,
+		#0c1e21 48%,
+		#0a1719 100%
+	);
+
+	// Top-left + bottom-right — Azania blue corner glows
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	&::before {
+		top: 0;
+		inset-inline-start: 0;
+		width: min(520px, 62%);
+		height: min(440px, 55%);
+		background: radial-gradient(
+			ellipse 90% 80% at 0% 0%,
+			rgba(31, 174, 243, 0.42) 0%,
+			rgba(31, 174, 243, 0.12) 45%,
+			transparent 72%
+		);
+	}
+
+	&::after {
+		bottom: 0;
+		inset-inline-end: 0;
+		width: min(560px, 65%);
+		height: min(460px, 58%);
+		background: radial-gradient(
+			ellipse 85% 75% at 100% 100%,
+			rgba(31, 174, 243, 0.38) 0%,
+			rgba(31, 174, 243, 0.1) 48%,
+			transparent 72%
+		);
+	}
+
+	.h6-footer-logo-area,
+	.footer-main-area,
+	.tj-copyright-area-2 {
 		position: relative;
-		z-index: 3;
-
-		@media #{$xl} {
-			margin-bottom: -110px;
-		}
-
-		@media #{$lg} {
-			margin-bottom: -100px;
-		}
-
-		@media #{$md} {
-			margin-bottom: -200px;
-		}
-
-		@media #{$sm, $xs} {
-			margin-bottom: -180px;
-		}
-	}
-
-	.cta-area {
-		align-items: center;
-
-		.cta-content {
-			padding: 22px 20px 22px 40px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-
-			.title {
-				font-size: 36px;
-				line-height: 1.15;
-				margin-bottom: 12px;
-
-				@media #{$xl} {
-					font-size: 34px;
-				}
-
-				@media #{$lg} {
-					font-size: 32px;
-				}
-
-				@media #{$md, $sm, $xs} {
-					font-size: 30px;
-				}
-			}
-
-			@media #{$lg} {
-				padding: 20px 16px 20px 32px;
-			}
-
-			@media #{$md, $sm, $xs} {
-				padding: 20px 24px 16px;
-			}
-		}
-
-		.cta-img {
-			display: flex;
-			align-items: flex-end;
-			justify-content: center;
-			max-height: 200px;
-			overflow: hidden;
-			padding: 0 16px 0 8px;
-
-			.cta-banner-img,
-			img {
-				width: auto;
-				max-width: 100%;
-				height: auto;
-				max-height: 200px;
-				object-fit: contain;
-				object-position: bottom center;
-			}
-
-			@media #{$md, $sm, $xs} {
-				max-height: 180px;
-				width: 100%;
-				padding: 0 20px 12px;
-
-				.cta-banner-img,
-				img {
-					max-height: 180px;
-				}
-			}
-		}
-	}
-}
-
-main:has(.tj-cta-section) + .tj-footer-section.h8-footer {
-	padding-top: 120px;
-
-	@media #{$xl} {
-		padding-top: 110px;
-	}
-
-	@media #{$lg} {
-		padding-top: 100px;
-	}
-
-	@media #{$md} {
-		padding-top: 200px;
-	}
-
-	@media #{$sm, $xs} {
-		padding-top: 180px;
+		z-index: 1;
 	}
 
 	.h6-footer-logo-area {
-		padding-top: 60px;
+		border-bottom-color: rgba(248, 248, 248, 0.2);
+	}
 
-		@media #{$lg} {
-			padding-top: 50px;
+	.h6-footer-logo.h8-footer-logo {
+		.azania-footer-logo,
+		img {
+			display: block;
+			width: auto;
+			max-width: min(340px, 100%);
+			height: auto;
+			max-height: 72px;
+			object-fit: contain;
+		}
+	}
+
+	.footer-col-1::before {
+		background: var(--tj-color-theme-primary) !important;
+		opacity: 0.18;
+	}
+
+	// Corner glows — Azania brand blue blur shapes + pattern overlays
+	.bg-shape-1,
+	.bg-shape-2 {
+		z-index: 0;
+		mix-blend-mode: difference;
+		opacity: 1;
+	}
+
+	.bg-shape-1 {
+		top: 0;
+		inset-inline-start: 0;
+		inset-inline-end: auto;
+		bottom: auto;
+	}
+
+	.bg-shape-2 {
+		top: auto;
+		bottom: 0;
+		inset-inline-start: auto;
+		inset-inline-end: 0;
+	}
+
+	.bg-shape-3,
+	.bg-shape-4 {
+		z-index: 0;
+		opacity: 1;
+
+		img {
+			filter: none;
+		}
+	}
+
+	// Bottom-right blur
+	.bg-shape-3 {
+		top: auto;
+		bottom: 0;
+		inset-inline-start: auto;
+		inset-inline-end: 0;
+	}
+
+	// Top-left blur
+	.bg-shape-4 {
+		top: 0;
+		bottom: auto;
+		inset-inline-start: 0;
+		inset-inline-end: auto;
+		transform: scale(1);
+	}
+
+	.footer-widget ul li a:hover {
+		color: var(--tj-color-theme-primary);
+	}
+
+	.social-links.style-3 ul li a:hover {
+		background-color: var(--tj-color-theme-primary);
+		border-color: var(--tj-color-theme-primary);
+	}
+
+	.subscribe-form {
+		input[type="email"]:focus {
+			outline-color: var(--tj-color-theme-primary);
 		}
 
-		@media #{$md, $sm, $xs} {
-			padding-top: 40px;
+		button:hover {
+			background-color: var(--tj-color-theme-primary) !important;
 		}
 	}
 }
+

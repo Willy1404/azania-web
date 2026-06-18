@@ -65,10 +65,22 @@ export async function clearSession() {
 }
 
 export async function loginUser({ email, password, portalId }) {
+	if (!process.env.SESSION_SECRET) {
+		console.error("[auth] SESSION_SECRET is not configured.");
+		return { error: "Sign-in is not configured on the server. Please contact your administrator." };
+	}
+
 	const prisma = getPrisma();
 	if (!prisma) return { error: "Database is temporarily unavailable." };
 
-	const user = await prisma.user.findUnique({ where: { email } });
+	let user;
+	try {
+		user = await prisma.user.findUnique({ where: { email } });
+	} catch (error) {
+		console.error("[auth] Database query failed:", error);
+		return { error: "Database is temporarily unavailable." };
+	}
+
 	if (!user) return { error: "Invalid email or password." };
 
 	const valid = await verifyPassword(password, user.password);
@@ -78,7 +90,13 @@ export async function loginUser({ email, password, portalId }) {
 		return { error: "You do not have access to this management portal." };
 	}
 
-	await createSession(user, portalId);
+	try {
+		await createSession(user, portalId);
+	} catch (error) {
+		console.error("[auth] Failed to create session:", error);
+		return { error: "Unable to start your session. Please try again." };
+	}
+
 	return { user };
 }
 

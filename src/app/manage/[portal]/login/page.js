@@ -15,18 +15,22 @@ export default async function ManageLoginPage({ params }) {
 		notFound();
 	}
 
+	const features = [
+		"Role-based access control",
+		"Live content publishing",
+		"Photo, video & document uploads",
+	];
+
 	return (
 		<div className="manage-auth-page">
-			<div
-				className="manage-auth-page__brand"
-				style={{ backgroundImage: "url('/images/bg/pheader-bg.webp')" }}
-			>
-				<div className="manage-auth-page__overlay" aria-hidden="true" />
+			<div className="manage-auth-page__brand">
+				<div className="manage-auth-page__mesh" aria-hidden="true" />
 				<div className="manage-auth-page__honeycomb" aria-hidden="true" />
-				<div className="manage-auth-page__glow" aria-hidden="true" />
+				<div className="manage-auth-page__glow manage-auth-page__glow--tl" aria-hidden="true" />
+				<div className="manage-auth-page__glow manage-auth-page__glow--br" aria-hidden="true" />
 
-				<div className="manage-auth-page__brand-inner">
-					<Link href="/manage">
+				<div className="manage-auth-page__brand-inner manage-animate-in">
+					<Link href="/manage" className="manage-auth-page__logo-link">
 						<img
 							src="/images/logos/azanialogo.png"
 							alt="Azania Bank"
@@ -34,10 +38,10 @@ export default async function ManageLoginPage({ params }) {
 						/>
 					</Link>
 
-					<span className="sub-title text-white">
+					<div className="manage-auth-page__badge">
 						<i className={portalConfig.icon} aria-hidden="true" />
-						{portalConfig.label}
-					</span>
+						<span>{portalConfig.label}</span>
+					</div>
 
 					<h1 className="manage-auth-page__title">
 						Secure content <span>management</span>
@@ -49,45 +53,60 @@ export default async function ManageLoginPage({ params }) {
 					</p>
 
 					<ul className="manage-auth-page__features">
-						<li>
-							<span className="manage-auth-page__check">
-								<i className="tji-check" aria-hidden="true" />
-							</span>
-							Role-based access control
-						</li>
-						<li>
-							<span className="manage-auth-page__check">
-								<i className="tji-check" aria-hidden="true" />
-							</span>
-							Live content publishing
-						</li>
-						<li>
-							<span className="manage-auth-page__check">
-								<i className="tji-check" aria-hidden="true" />
-							</span>
-							Photo, video & document uploads
-						</li>
+						{features.map((feature, index) => (
+							<li
+								key={feature}
+								className="manage-animate-in"
+								style={{ animationDelay: `${0.12 + index * 0.08}s` }}
+							>
+								<span className="manage-auth-page__check">
+									<i className="tji-check" aria-hidden="true" />
+								</span>
+								{feature}
+							</li>
+						))}
 					</ul>
 
-					<div className="manage-auth-page__visual" aria-hidden="true">
+					<div className="manage-auth-page__stats manage-animate-in" style={{ animationDelay: "0.36s" }}>
+						<div>
+							<strong>4</strong>
+							<span>Portals</span>
+						</div>
+						<div>
+							<strong>10+</strong>
+							<span>Modules</span>
+						</div>
+						<div>
+							<strong>Live</strong>
+							<span>Publishing</span>
+						</div>
+					</div>
+
+					<div className="manage-auth-page__visual manage-animate-in" style={{ animationDelay: "0.44s" }} aria-hidden="true">
+						<div className="manage-auth-page__visual-glow" />
 						<img src="/images/ban11.png" alt="" />
 					</div>
 				</div>
 			</div>
 
 			<div className="manage-auth-page__form-wrap">
+				<div className="manage-auth-page__orb manage-auth-page__orb--1" aria-hidden="true" />
+				<div className="manage-auth-page__orb manage-auth-page__orb--2" aria-hidden="true" />
 				<div className="manage-auth-page__form-bg" aria-hidden="true" />
-				<ManageLoginForm
-					portalId={portal}
-					portalLabel={portalConfig.label}
-					portalIcon={portalConfig.icon}
-				/>
-				<p className="manage-auth-page__back">
-					<Link href="/manage">
-						<i className="tji-arrow-right-long" aria-hidden="true" />
-						All management portals
-					</Link>
-				</p>
+
+				<div className="manage-auth-page__form-inner">
+					<ManageLoginForm
+						portalId={portal}
+						portalLabel={portalConfig.label}
+						portalIcon={portalConfig.icon}
+					/>
+					<p className="manage-auth-page__back">
+						<Link href="/manage">
+							<i className="tji-arrow-right-long" aria-hidden="true" />
+							All management portals
+						</Link>
+					</p>
+				</div>
 			</div>
 		</div>
 	);

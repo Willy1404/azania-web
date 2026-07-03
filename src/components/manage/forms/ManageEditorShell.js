@@ -17,19 +17,21 @@ const ManageEditorShell = ({
 					</span>
 					<h1>{title}</h1>
 				</div>
-				<button
-					type="button"
-					className="tj-primary-btn manage-editor__save"
-					onClick={onSave}
-					disabled={loading}
-				>
-					<span className="btn-text">
-						<span>{loading ? "Saving..." : saveLabel}</span>
-					</span>
-					<span className="btn-icon">
-						<i className="tji-arrow-right-long" aria-hidden="true" />
-					</span>
-				</button>
+				{onSave ? (
+					<button
+						type="button"
+						className="tj-primary-btn manage-editor__save"
+						onClick={onSave}
+						disabled={loading}
+					>
+						<span className="btn-text">
+							<span>{loading ? "Saving..." : saveLabel}</span>
+						</span>
+						<span className="btn-icon">
+							<i className="tji-arrow-right-long" aria-hidden="true" />
+						</span>
+					</button>
+				) : null}
 			</div>
 
 			{message ? (

@@ -1,4 +1,5 @@
 import { Mona_Sans } from "next/font/google";
+import KarolChatWidget from "@/components/karol/KarolChatWidget";
 import "react-range-slider-input/dist/style.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -37,11 +38,17 @@ export const metadata = {
 		"Azania Bank offers personal, business, and digital banking solutions tailored to help you save, grow, and manage your finances with confidence.",
 };
 
+export const viewport = {
+	width: "device-width",
+	initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" data-scroll-behavior="smooth" dir="ltr">
 			<body className={`${bodyFont.variable} ${headingFont.variable}`}>
 				{children}
+				<KarolChatWidget />
 			</body>
 		</html>
 	);

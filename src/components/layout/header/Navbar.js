@@ -1,5 +1,8 @@
 import useActiveLink from "@/hooks/useActiveLink";
-import Link from "next/link";
+import getMegaMenuItems from "@/libs/getMegaMenuItems";
+import NavMenuLink from "@/components/shared/NavMenuLink";
+import NavMenuTrigger from "@/components/shared/NavMenuTrigger";
+import PersonalBankingFlyoutMenu from "@/components/layout/header/PersonalBankingFlyoutMenu";
 
 const Navbar = ({ navItems = [] }) => {
 	const makeActiveLink = useActiveLink();
@@ -16,9 +19,9 @@ const Navbar = ({ navItems = [] }) => {
 									key={navItem?.id}
 									className={navItem?.isActive ? "current-menu-item" : ""}
 								>
-									<Link href={navItem?.path ? navItem?.path : "#"}>
+									<NavMenuLink href={navItem?.path ? navItem?.path : "#"}>
 										{navItem?.name}
-									</Link>
+									</NavMenuLink>
 								</li>
 							);
 						}
@@ -30,10 +33,12 @@ const Navbar = ({ navItems = [] }) => {
 									navItem?.isActive ? "current-menu-ancestor" : ""
 								}`}
 							>
-								<Link href={navItem?.path ? navItem?.path : "#"}>
-									{navItem?.name}
-								</Link>
-								<ul className="sub-menu header__mega-menu mega-menu mega-menu-pages azania-mega-menu">
+								<NavMenuTrigger>{navItem?.name}</NavMenuTrigger>
+								{navItem?.menuType === "personal-flyout" ||
+								navItem?.path === "/personal-banking" ? (
+									<PersonalBankingFlyoutMenu groups={navItem.submenu} />
+								) : (
+									<ul className="sub-menu header__mega-menu mega-menu mega-menu-pages azania-mega-menu">
 									<li>
 										<div className="mega-menu-wrapper">
 											{navItem?.submenu?.map((group) => (
@@ -41,8 +46,8 @@ const Navbar = ({ navItems = [] }) => {
 													<div className="mega-menu-pages-single-inner">
 														<h6 className="mega-menu-title">{group?.name}</h6>
 														<div className="mega-menu-list">
-															{group?.items?.map((item) => (
-																<Link key={item?.id} href={item?.path || "#"}>
+															{getMegaMenuItems(group)?.map((item) => (
+																<NavMenuLink key={item?.id} href={item?.path || "#"}>
 																	{item?.icon ? (
 																		<span className="azania-mega-menu-icon">
 																			<i className={item.icon}></i>
@@ -51,7 +56,7 @@ const Navbar = ({ navItems = [] }) => {
 																		""
 																	)}
 																	{item?.name}
-																</Link>
+																</NavMenuLink>
 															))}
 														</div>
 													</div>
@@ -60,6 +65,7 @@ const Navbar = ({ navItems = [] }) => {
 										</div>
 									</li>
 								</ul>
+								)}
 							</li>
 						);
 					})}

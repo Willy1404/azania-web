@@ -1,0 +1,467 @@
+@use "../utilities" as *;
+
+// ─── Global mobile / tablet foundations ───────────────────────────
+html {
+	overflow-x: clip;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	overflow-x: clip;
+	max-width: 100%;
+}
+
+img,
+video,
+svg,
+canvas {
+	max-width: 100%;
+	height: auto;
+}
+
+// Prevent layout blowout from wide tables / pre blocks in CMS content
+.manage-main__body,
+.azania-detail-content,
+.tj-page-header,
+.azania-section-intro {
+	table {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	pre,
+	code {
+		max-width: 100%;
+		overflow-x: auto;
+		word-break: break-word;
+	}
+}
+
+// Touch-friendly primary actions on phones
+@media #{$sm, $xs} {
+	.tj-primary-btn,
+	.tj-secondary-btn,
+	.manage-login-form__submit {
+		min-height: 44px;
+	}
+
+	.sec-title {
+		font-size: clamp(28px, 8vw, 42px);
+		line-height: 1.15;
+	}
+
+	.section-gap {
+		padding-top: clamp(48px, 10vw, 80px);
+		padding-bottom: clamp(48px, 10vw, 80px);
+	}
+}
+
+// ─── Header — use more screen width on small devices ─────────────
+.header-area.h8-header.header-absolute {
+	@media #{$md, $sm, $xs} {
+		width: calc(100% - 24px) !important;
+		max-width: none;
+	}
+
+	.header-wrapper {
+		@media #{$xs} {
+			padding-inline: 12px;
+		}
+
+		@media #{$md, $sm, $xs} {
+			flex-wrap: nowrap;
+			gap: 8px;
+		}
+	}
+
+	.site_logo .logo {
+		@media #{$xs} {
+			max-width: 100px;
+		}
+
+		@media #{$sm} {
+			max-width: 120px;
+		}
+	}
+
+	.mainmenu ul {
+		@media #{$lg} {
+			gap: 18px;
+		}
+	}
+}
+
+.header-mobile-ctas {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-inline-start: auto;
+	margin-inline-end: 6px;
+	flex-shrink: 1;
+	min-width: 0;
+
+	@media #{$xs} {
+		gap: 4px;
+		margin-inline-end: 4px;
+	}
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 10px;
+		border-radius: 8px;
+		font-size: 11px;
+		font-weight: var(--tj-fw-sbold, 600);
+		line-height: 1.25;
+		text-align: center;
+		text-decoration: none;
+		background: var(--tj-color-theme-primary);
+		color: var(--tj-color-common-white);
+		transition: opacity 0.2s;
+		white-space: nowrap;
+
+		&:hover {
+			opacity: 0.9;
+			color: var(--tj-color-common-white);
+		}
+
+		&--dark {
+			background: var(--tj-color-theme-dark);
+		}
+
+		@media #{$sm} {
+			padding: 9px 12px;
+			font-size: 12px;
+		}
+
+		@media #{$md} {
+			padding: 9px 14px;
+			font-size: 13px;
+		}
+	}
+}
+
+.hamburger-cta-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 28px;
+
+	.tj-primary-btn {
+		justify-content: center;
+		width: 100%;
+	}
+}
+
+// ─── Hero — overflow + readable titles ───────────────────────────
+.h8-hero {
+	@media #{$md, $sm, $xs} {
+		margin-inline: 12px;
+		overflow: hidden;
+	}
+
+	&-item {
+		@media #{$md} {
+			min-height: auto;
+			padding-bottom: 40px;
+		}
+
+		@media #{$sm, $xs} {
+			min-height: auto;
+			padding-bottom: 32px;
+		}
+	}
+
+	&-content .h8-hero-title {
+		@media #{$md, $sm, $xs} {
+			.hero-title-main,
+			.hero-title-sub {
+				white-space: normal;
+				overflow-wrap: break-word;
+				hyphens: auto;
+			}
+		}
+	}
+
+	&-banner {
+		@media #{$md, $sm, $xs} {
+			max-width: 100%;
+			height: auto;
+			max-height: none;
+			margin-inline: auto;
+
+			img {
+				min-width: 0;
+				width: 100%;
+				max-width: 420px;
+				height: auto;
+				max-height: 55vh;
+				transform: none;
+				margin-inline: auto;
+			}
+		}
+
+		@media #{$xs} {
+			img {
+				max-width: 100%;
+				max-height: 48vh;
+			}
+		}
+	}
+
+	.h8-services-circle {
+		@media #{$sm, $xs} {
+			position: relative;
+			inset: auto;
+			margin: 24px 0 0 auto;
+			bottom: auto;
+		}
+	}
+}
+
+// ─── About block fixed width ─────────────────────────────────────
+.h8-about-right-desc {
+	width: 100% !important;
+	max-width: 530px;
+}
+
+// ─── Team avatars on phones ───────────────────────────────────────
+.h8-team-item-wrapper .team-item .team-img {
+	@media #{$xs} {
+		width: 160px;
+		height: 160px;
+	}
+}
+
+// ─── Azania hub / banking pages ──────────────────────────────────
+.azania-hub-stats,
+.azania-corporate-metrics {
+	@media #{$md} {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media #{$sm, $xs} {
+		grid-template-columns: 1fr;
+		gap: 16px;
+		margin-top: 28px;
+	}
+}
+
+.azania-hub-stat,
+.azania-corporate-metric {
+	@media #{$sm, $xs} {
+		padding: 20px 16px;
+
+		h3 {
+			font-size: 28px;
+		}
+	}
+}
+
+.azania-category-nav {
+	@media #{$md, $sm, $xs} {
+		position: static;
+		top: auto;
+		margin-bottom: 24px;
+
+		ul {
+			display: flex;
+			flex-wrap: nowrap;
+			gap: 8px;
+			overflow-x: auto;
+			padding-bottom: 6px;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: thin;
+
+			li {
+				margin-bottom: 0;
+				flex-shrink: 0;
+
+				a {
+					white-space: nowrap;
+					padding: 10px 16px;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+
+.azania-personal-row {
+	@media #{$md, $sm, $xs} {
+		padding: 32px 0;
+	}
+}
+
+.azania-personal-highlight,
+.azania-portal-card {
+	@media #{$md, $sm, $xs} {
+		padding: 28px 22px;
+		min-height: 0;
+	}
+}
+
+.azania-corporate-header {
+	@media #{$md, $sm, $xs} {
+		padding: 36px 0;
+
+		.feature-pill {
+			font-size: 13px;
+			padding: 6px 12px;
+		}
+	}
+}
+
+.azania-related-pills {
+	@media #{$xs} {
+		gap: 8px;
+
+		a {
+			padding: 8px 14px;
+			font-size: 13px;
+		}
+	}
+}
+
+// ─── News & forex section ──────────────────────────────────────────
+.azania-news-forex {
+	@media #{$md, $sm, $xs} {
+		.row {
+			row-gap: 28px;
+		}
+	}
+}
+
+.azania-news-item {
+	@media #{$sm, $xs} {
+		flex-direction: column;
+
+		&__thumb {
+			width: 100%;
+			max-width: none;
+
+			img {
+				height: 180px;
+			}
+		}
+	}
+}
+
+.azania-forex-card {
+	@media #{$md, $sm, $xs} {
+		padding: 22px 18px 18px;
+	}
+}
+
+// ─── Footer ──────────────────────────────────────────────────────
+.tj-footer-section.footer-2.h8-footer {
+	.h6-footer-logo-area {
+		@media #{$sm, $xs} {
+			padding: 56px 0 48px;
+		}
+	}
+
+	.footer-widget {
+		@media #{$sm, $xs} {
+			margin-bottom: 28px;
+		}
+	}
+
+	.footer-main-area {
+		@media #{$sm, $xs} {
+			padding-top: 48px;
+			padding-bottom: 48px;
+		}
+	}
+
+	.subscribe-form {
+		@media #{$xs} {
+			flex-direction: column;
+			align-items: stretch;
+
+			input[type="email"] {
+				width: 100%;
+			}
+
+			button {
+				width: 100%;
+				justify-content: center;
+			}
+		}
+	}
+
+	.tj-copyright-area-2 {
+		@media #{$xs} {
+			text-align: center;
+
+			.copyright-content,
+			.footer-menu {
+				justify-content: center;
+				text-align: center;
+			}
+		}
+	}
+}
+
+// ─── Page headers (inner pages) ──────────────────────────────────
+.tj-page-header {
+	@media #{$sm, $xs} {
+		padding-top: 48px;
+		padding-bottom: 52px;
+		margin-inline: 12px;
+		border-radius: 10px;
+	}
+
+	.tj-page-title {
+		@media #{$sm, $xs} {
+			font-size: clamp(28px, 8vw, 40px);
+			line-height: 1.15;
+		}
+	}
+}
+
+// ─── Banking detail / sidebar pages ──────────────────────────────
+.section-page-sidebar,
+.azania-detail-personal-hero {
+	@media #{$md, $sm, $xs} {
+		margin-bottom: 24px;
+	}
+}
+
+// ─── Manage portal (public pages) ────────────────────────────────
+.manage-portals-page .manage-page-hero {
+	@media #{$md, $sm, $xs} {
+		padding: 40px 0 48px;
+
+		.container {
+			flex-direction: column;
+		}
+
+		&__visual {
+			display: none;
+		}
+	}
+}
+
+.manage-portal-card {
+	@media #{$sm, $xs} {
+		min-height: 0;
+	}
+}
+
+// ─── Safe area for notched phones ────────────────────────────────
+@supports (padding: max(0px)) {
+	.header-area.h8-header.header-absolute {
+		@media #{$sm, $xs} {
+			top: max(12px, env(safe-area-inset-top));
+		}
+	}
+
+	body {
+		padding-left: env(safe-area-inset-left);
+		padding-right: env(safe-area-inset-right);
+	}
+}

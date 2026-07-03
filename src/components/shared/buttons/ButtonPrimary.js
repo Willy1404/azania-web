@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { isExternalUrl } from "@/libs/azaniaExternalLinks";
 
 const ButtonPrimary = ({ className, text, isTextBtn, url, type, iconName }) => {
+	const btnClass = `${isTextBtn ? "text-btn" : "tj-primary-btn"} ${
+		className ? className : ""
+	}`;
+
 	return (
 		<>
 			{type ? (
@@ -15,13 +20,22 @@ const ButtonPrimary = ({ className, text, isTextBtn, url, type, iconName }) => {
 						<i className="tji-arrow-right-long"></i>
 					</span>
 				</button>
-			) : (
-				<Link
-					href={url ? url : "/"}
-					className={`${isTextBtn ? "text-btn" : "tj-primary-btn"} ${
-						className ? className : ""
-					}`}
+			) : isExternalUrl(url) ? (
+				<a
+					href={url}
+					className={btnClass}
+					target="_blank"
+					rel="noopener noreferrer"
 				>
+					<span className="btn-text">
+						<span>{text}</span>
+					</span>
+					<span className="btn-icon">
+						<i className="tji-arrow-right-long"></i>
+					</span>
+				</a>
+			) : (
+				<Link href={url ? url : "/"} className={btnClass}>
 					<span className="btn-text">
 						<span>{text}</span>
 					</span>

@@ -1,8 +1,8 @@
 import { getContentCollection } from "@/lib/cms/content";
-import fallbackPages from "../../public/fakedata/personal-banking-pages.json";
+import personalBankingPages from "@/libs/personalBankingPages";
 
 const getPersonalBankingPages = async () => {
-	return getContentCollection("personal_banking_pages", fallbackPages);
+	return getContentCollection("personal_banking_pages", personalBankingPages);
 };
 
 export default getPersonalBankingPages;

@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
 }
 
 enum Role {
@@ -16,9 +16,9 @@ enum Role {
 
 model User {
   id        String   @id @default(cuid())
-  email     String   @unique
-  password  String
-  name      String
+  email     String   @unique @db.VarChar(191)
+  password  String   @db.VarChar(255)
+  name      String   @db.VarChar(191)
   role      Role
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -26,12 +26,102 @@ model User {
 
 model ContentEntry {
   id         String   @id @default(cuid())
-  contentKey String
-  slug       String?
-  data       String
+  contentKey String   @db.VarChar(191)
+  slug       String?  @db.VarChar(191)
+  data       String   @db.LongText
   updatedAt  DateTime @updatedAt
-  updatedBy  String?
+  updatedBy  String?  @db.VarChar(191)
 
   @@unique([contentKey, slug])
   @@index([contentKey])
+}
+
+model MediaAsset {
+  id         String   @id @default(cuid())
+  filename   String   @db.VarChar(255)
+  mimeType   String   @db.VarChar(127)
+  kind       String   @db.VarChar(32)
+  size       Int
+  data       Bytes    @db.LongBlob
+  uploadedBy String?  @db.VarChar(191)
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model KarolDocument {
+  id          String        @id @default(cuid())
+  title       String        @db.VarChar(255)
+  category    String        @db.VarChar(64)
+  filename    String?       @db.VarChar(255)
+  mimeType    String?       @db.VarChar(127)
+  sourceType  String        @default("upload") @db.VarChar(32)
+  sourceKey   String?       @db.VarChar(191)
+  status      String        @default("pending") @db.VarChar(32)
+  chunkCount  Int           @default(0)
+  sourceText  String?       @db.LongText
+  errorMsg    String?       @db.Text
+  uploadedBy  String?       @db.VarChar(191)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  chunks      KarolChunk[]
+
+  @@index([category])
+  @@index([status])
+  @@index([sourceType, sourceKey])
+}
+
+model KarolChunk {
+  id         String        @id @default(cuid())
+  documentId String
+  document   KarolDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  content    String        @db.LongText
+  embedding  String        @db.LongText
+  chunkIndex Int
+  metadata   String?       @db.Text
+  createdAt  DateTime      @default(now())
+
+  @@index([documentId])
+}
+
+model KarolConversation {
+  id        String         @id @default(cuid())
+  sessionId String         @db.VarChar(191)
+  language  String?        @db.VarChar(16)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  messages  KarolMessage[]
+
+  @@index([sessionId])
+  @@index([updatedAt])
+}
+
+model KarolMessage {
+  id               String            @id @default(cuid())
+  conversationId   String
+  conversation     KarolConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role             String            @db.VarChar(16)
+  content          String            @db.LongText
+  sources          String?           @db.Text
+  relatedQuestions String?           @db.Text
+  responseTimeMs   Int?
+  failed           Boolean           @default(false)
+  createdAt        DateTime          @default(now())
+  feedback         KarolFeedback?
+
+  @@index([conversationId])
+  @@index([createdAt])
+  @@index([failed])
+}
+
+model KarolFeedback {
+  id        String       @id @default(cuid())
+  messageId String       @unique
+  message   KarolMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  rating    String       @db.VarChar(8)
+  comment   String?      @db.Text
+  createdAt DateTime     @default(now())
+
+  @@index([rating])
+  @@index([createdAt])
 }

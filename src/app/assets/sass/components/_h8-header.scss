@@ -30,16 +30,16 @@ START: Theme Header CSS
 			background-color: var(--tj-color-grey-1);
 		}
 		@media #{$md} {
-			width: 86%;
+			width: calc(100% - 24px);
 		}
 		@media #{$sm} {
 			top: 12px;
-			width: 86%;
+			width: calc(100% - 24px);
 			padding-bottom: 12px;
 		}
 		@media #{$xs} {
 			top: 12px;
-			width: 78%;
+			width: calc(100% - 24px);
 			padding-bottom: 12px;
 		}
 		.h8-header-mainmenu-bg-shape {

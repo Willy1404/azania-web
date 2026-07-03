@@ -9,11 +9,10 @@ START: Hero CSS
 	border-radius: 12px;
 	border-end-end-radius: 0;
 	border-end-start-radius: 0;
-	overflow: visible;
+	overflow: hidden;
 
 	@media #{$sm, $xs} {
 		margin: 0 12px 0;
-		overflow: hidden;
 	}
 	&-inner {
 		position: relative;
@@ -102,6 +101,10 @@ START: Hero CSS
 		}
 	}
 	&-content {
+		@media #{$sm, $xs} {
+			margin-bottom: 8px;
+		}
+
 		.h8-hero {
 			&-title {
 				font-size: 148px;
@@ -117,9 +120,21 @@ START: Hero CSS
 					white-space: nowrap;
 				}
 
+				@media #{$md, $sm, $xs} {
+					.hero-title-main,
+					.hero-title-sub {
+						white-space: normal;
+						overflow-wrap: break-word;
+					}
+				}
+
 				.hero-title-sub {
 					font-size: 0.5em;
-					line-height: 1.05;
+					line-height: 1.15;
+
+					@media #{$sm, $xs} {
+						margin-top: 4px;
+					}
 				}
 
 				span {
@@ -251,50 +266,198 @@ START: Hero CSS
 			inset-inline-end: 0;
 		}
 	}
-	.circle-text-wrap {
+	.h8-services-circle {
+		position: absolute;
 		z-index: 1000;
-		height: 160px;
-		width: 160px;
 		inset-inline-end: 0;
 		bottom: 60px;
-		background-color: var(--tj-color-grey-2);
-		border-radius: 100%;
-		color: var(--tj-color-theme-dark);
-		font-weight: var(--tj-fw-sbold);
+		width: 220px;
+		height: 220px;
+		border-radius: 50%;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		animation: tj-bounce-ball 2s infinite;
-		transform: all 0.4s;
-		.desc {
-			max-width: 83px;
-			i {
-				transform: rotate(-45deg) translateY(3px);
-				display: inline-block;
-				font-size: 22px;
-				transition: all 0.4s;
-			}
-		}
-		&:hover {
-			background-color: var(--tj-color-theme-primary);
-			animation-play-state: paused;
+		text-decoration: none;
+		background:
+			linear-gradient(#fff, #fff) padding-box,
+			linear-gradient(to top, #0a4d75 0%, #1278a8 45%, #1faef3 100%) border-box;
+		border: 7px solid transparent;
+		box-shadow: 0 18px 50px rgba(24, 41, 44, 0.12);
+		animation: tj-bounce-ball 2.8s ease-in-out infinite;
+		transition: transform 0.35s ease, box-shadow 0.35s ease;
 
-			.desc {
-				i {
-					transform: rotate(0deg) translateY(5px);
+		&__inner-ring {
+			position: absolute;
+			inset: 14px;
+			border-radius: 50%;
+			border: 1px solid rgba(31, 174, 243, 0.2);
+			pointer-events: none;
+		}
+
+		&__icon-wrap {
+			position: relative;
+			width: 72px;
+			height: 56px;
+			border-radius: 50%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background: radial-gradient(
+				circle,
+				rgba(31, 174, 243, 0.16) 0%,
+				rgba(31, 174, 243, 0.03) 72%
+			);
+			margin-bottom: 10px;
+		}
+
+		&__icons {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+
+			i {
+				width: 34px;
+				height: 34px;
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 16px;
+				color: #1faef3;
+				background: rgba(255, 255, 255, 0.95);
+				border: 1.5px solid rgba(31, 174, 243, 0.28);
+				box-shadow: 0 4px 12px rgba(31, 174, 243, 0.12);
+				line-height: 1;
+
+				&:nth-child(2) {
+					width: 38px;
+					height: 38px;
+					font-size: 18px;
+					color: #fff;
+					background: linear-gradient(145deg, #1faef3 0%, #0d8fd4 100%);
+					border-color: rgba(255, 255, 255, 0.35);
+					box-shadow: 0 6px 16px rgba(31, 174, 243, 0.28);
+					transform: translateY(-2px);
 				}
 			}
 		}
+
+		&__text {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			line-height: 1.05;
+			margin-bottom: 10px;
+		}
+
+		&__text-our {
+			font-size: 22px;
+			font-weight: var(--tj-fw-bold, 700);
+			color: #18292c;
+			letter-spacing: -0.02em;
+		}
+
+		&__text-services {
+			font-size: 26px;
+			font-weight: var(--tj-fw-bold, 700);
+			color: #1faef3;
+			letter-spacing: -0.02em;
+		}
+
+		&__line {
+			position: relative;
+			width: 54px;
+			height: 2px;
+			background: #1faef3;
+			border-radius: 999px;
+			margin-bottom: 14px;
+		}
+
+		&__line-dot {
+			position: absolute;
+			inset-inline-end: -1px;
+			top: 50%;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: #1faef3;
+			transform: translateY(-50%);
+		}
+
+		&__action {
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(to top, #0a4d75 0%, #1faef3 100%);
+			border: 2px solid #fff;
+			box-shadow: 0 8px 20px rgba(31, 174, 243, 0.35);
+			color: #fff;
+			font-size: 18px;
+
+			i {
+				transform: rotate(-45deg);
+				display: inline-block;
+				transition: transform 0.35s ease;
+			}
+		}
+
+		&:hover {
+			animation-play-state: paused;
+			transform: translateY(-4px);
+			box-shadow: 0 22px 56px rgba(31, 174, 243, 0.22);
+
+			.h8-services-circle__action i {
+				transform: rotate(0deg);
+			}
+		}
+
 		@media #{$md} {
 			bottom: 2%;
+			width: 200px;
+			height: 200px;
 		}
+
 		@media #{$sm} {
 			bottom: 30%;
+			width: 190px;
+			height: 190px;
 		}
+
 		@media #{$xs} {
-			height: 120px;
-			width: 120px;
+			width: 170px;
+			height: 170px;
 			bottom: 25%;
+
+			.h8-services-circle__icons i {
+				width: 28px;
+				height: 28px;
+				font-size: 13px;
+
+				&:nth-child(2) {
+					width: 32px;
+					height: 32px;
+					font-size: 15px;
+				}
+			}
+
+			.h8-services-circle__text-our {
+				font-size: 19px;
+			}
+
+			.h8-services-circle__text-services {
+				font-size: 22px;
+			}
+
+			.h8-services-circle__action {
+				width: 42px;
+				height: 42px;
+				font-size: 16px;
+			}
 		}
 	}
 	&-box {
@@ -318,19 +481,23 @@ START: Hero CSS
 		}
 		@media #{$sm,$xs} {
 			position: static;
-			gap: 40px;
-			margin-top: -46px;
+			gap: 24px;
+			margin-top: 28px;
 			flex-direction: column;
-			margin-inline-start: 3px;
-			margin-inline-end: 3px;
+			margin-inline-start: 0;
+			margin-inline-end: 0;
 		}
 		@media #{$sm} {
-			gap: 50px;
-			margin-top: -66px;
+			gap: 28px;
+			margin-top: 32px;
 		}
 
 		.customers {
 			margin-top: 28px;
+
+			@media #{$sm, $xs} {
+				margin-top: 0;
+			}
 
 			ul li img {
 				object-fit: cover;

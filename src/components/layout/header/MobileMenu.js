@@ -1,7 +1,15 @@
 import Link from "next/link";
+import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
+import NavMenuLink from "@/components/shared/NavMenuLink";
+import { INTERNET_BANKING_LOGIN_URL } from "@/libs/azaniaExternalLinks";
 import MobileNavbar from "./MobileNavbar";
 
-const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, navItems = [] }) => {
+const MobileMenu = ({
+	isMobileMenuOpen,
+	setIsMobileMenuOpen,
+	navItems = [],
+	headerType = 1,
+}) => {
 	const handleClick = () => {
 		setIsMobileMenuOpen(false);
 	};
@@ -22,7 +30,7 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, navItems = [] }) =>
 					<div className="hamburger_inner">
 						<div className="hamburger_top d-flex align-items-center justify-content-between">
 							<div className="hamburger_logo">
-								<Link href="/" className="mobile_logo">
+								<Link href="/" className="mobile_logo" onClick={handleClick}>
 									<img src="/images/logos/azanialogo.png" alt="Azania Bank" />
 								</Link>
 							</div>
@@ -32,6 +40,20 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, navItems = [] }) =>
 								</button>
 							</div>
 						</div>
+
+						{headerType !== 5 ? (
+							<div className="hamburger-cta-buttons">
+								{headerType === 8 ? (
+									<ButtonPrimary
+										text="Internet Banking"
+										url={INTERNET_BANKING_LOGIN_URL}
+										className="btn-dark w-100"
+									/>
+								) : null}
+								<ButtonPrimary text="Open Account" url="/open-account" className="w-100" />
+							</div>
+						) : null}
+
 						<MobileNavbar navItems={navItems} />
 						<div className="hamburger-infos">
 							<h5 className="hamburger-title">Contact Info</h5>

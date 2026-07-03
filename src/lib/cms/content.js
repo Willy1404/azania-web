@@ -1,58 +1,68 @@
-import { getPrisma } from "@/lib/db";
+import { getPrisma, isDatabaseUnavailable } from "@/lib/db";
 
 const SINGLE_SLUG = "__single__";
 
 export async function getContentCollection(contentKey, fallback = []) {
+	if (isDatabaseUnavailable()) return fallback;
+
 	const prisma = getPrisma();
 	if (!prisma) return fallback;
 
 	try {
-	const entries = await prisma.contentEntry.findMany({
-		where: { contentKey },
-		orderBy: { slug: "asc" },
-	});
+		const entries = await prisma.contentEntry.findMany({
+			where: { contentKey },
+			orderBy: { slug: "asc" },
+		});
 
-	if (!entries.length) return fallback;
+		if (!entries.length) return fallback;
 
-	return entries
-		.map((entry) => {
-			try {
-				return JSON.parse(entry.data);
-			} catch {
-				return null;
-			}
-		})
-		.filter(Boolean)
-		.sort((a, b) => (a.id || 0) - (b.id || 0));
+		return entries
+			.map((entry) => {
+				try {
+					return JSON.parse(entry.data);
+				} catch {
+					return null;
+				}
+			})
+			.filter(Boolean)
+			.sort((a, b) => (a.id || 0) - (b.id || 0));
 	} catch (error) {
-		console.error(`[cms] getContentCollection(${contentKey}):`, error);
+		console.warn(
+			`[cms] Using JSON fallback for "${contentKey}" (database unavailable):`,
+			error?.message || error
+		);
 		return fallback;
 	}
 }
 
 export async function getContentSingleton(contentKey, fallback = null) {
+	if (isDatabaseUnavailable()) return fallback;
+
 	const prisma = getPrisma();
 	if (!prisma) return fallback;
 
 	try {
-	const entry = await prisma.contentEntry.findUnique({
-		where: {
-			contentKey_slug: {
-				contentKey,
-				slug: SINGLE_SLUG,
+		const entry = await prisma.contentEntry.findUnique({
+			where: {
+				contentKey_slug: {
+					contentKey,
+					slug: SINGLE_SLUG,
+				},
 			},
-		},
-	});
+		});
 
-	if (!entry) return fallback;
+		if (!entry) return fallback;
 
-	try {
-		return JSON.parse(entry.data);
-	} catch {
-		return fallback;
-	}
+		try {
+			return JSON.parse(entry.data);
+		} catch {
+			return fallback;
+		}
 	} catch (error) {
-		console.error(`[cms] getContentSingleton(${contentKey}):`, error);
+		console.warn(
+			`[cms] Using JSON fallback for "${contentKey}" (database unavailable):`,
+			error?.message || error
+		);
 		return fallback;
 	}
 }

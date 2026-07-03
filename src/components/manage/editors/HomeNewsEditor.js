@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import ManageEditorShell from "@/components/manage/forms/ManageEditorShell";
 import ManageFormField from "@/components/manage/forms/ManageFormField";
 import ManageMediaField from "@/components/manage/forms/ManageMediaField";
+import { CMS_IMAGE_SIZES } from "@/lib/cms/imageSizes";
 
 const newsFields = [
 	{ key: "title", label: "Headline" },
@@ -118,6 +119,7 @@ const HomeNewsEditor = ({ portalId, contentKey, label, initialData }) => {
 							value={item.img || ""}
 							onChange={(v) => updateItem(index, "img", v)}
 							accept="image/*"
+							recommendedSize={CMS_IMAGE_SIZES.homeNewsThumb}
 						/>
 					</div>
 				</div>

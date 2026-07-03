@@ -1,7 +1,4 @@
-import fs from "fs/promises";
-import path from "path";
-
-const UPLOAD_DIR = path.join(process.cwd(), "public/uploads/cms");
+import { saveMediaAsset } from "@/lib/cms/media";
 
 const ALLOWED_TYPES = {
 	image: ["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml"],
@@ -30,7 +27,7 @@ function getMediaKind(mimeType) {
 	return null;
 }
 
-export async function saveUploadedFile(file) {
+export async function saveUploadedFile(file, uploadedBy = null) {
 	if (!file || typeof file === "string") {
 		throw new Error("No file provided.");
 	}
@@ -44,18 +41,15 @@ export async function saveUploadedFile(file) {
 		throw new Error(`File is too large. Maximum size is ${MAX_SIZE[kind] / (1024 * 1024)}MB.`);
 	}
 
-	await fs.mkdir(UPLOAD_DIR, { recursive: true });
-
-	const ext = path.extname(file.name) || (kind === "document" ? ".pdf" : "");
-	const filename = `${Date.now()}-${sanitizeFilename(path.basename(file.name, ext))}${ext}`;
-	const filepath = path.join(UPLOAD_DIR, filename);
-
+	const ext = file.name.includes(".") ? file.name.slice(file.name.lastIndexOf(".")) : "";
+	const filename = `${Date.now()}-${sanitizeFilename(file.name.replace(ext, ""))}${ext}`;
 	const buffer = Buffer.from(await file.arrayBuffer());
-	await fs.writeFile(filepath, buffer);
 
-	return {
-		url: `/uploads/cms/${filename}`,
-		kind,
+	return saveMediaAsset({
+		buffer,
 		filename,
-	};
+		mimeType: file.type,
+		kind,
+		uploadedBy,
+	});
 }

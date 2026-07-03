@@ -1,5 +1,6 @@
 "use client";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
+import { INTERNET_BANKING_LOGIN_URL } from "@/libs/azaniaExternalLinks";
 import useIsSticky from "@/hooks/useIsSticky";
 import Link from "next/link";
 import { useState } from "react";
@@ -40,6 +41,7 @@ const Header = ({
 				isMobileMenuOpen={isMobileMenuOpen}
 				setIsMobileMenuOpen={setIsMobileMenuOpen}
 				navItems={navItems}
+				headerType={headerType}
 			/>
 			{/* <!-- end: Offcanvas Menu --> */}
 
@@ -154,7 +156,7 @@ const Header = ({
 												<div className="header-button">
 													<ButtonPrimary
 														text={"Internet Banking"}
-														url={"/open-account/internet-banking"}
+														url={INTERNET_BANKING_LOGIN_URL}
 														className={"btn-dark"}
 													/>
 												</div>
@@ -187,6 +189,24 @@ const Header = ({
 										</div>
 									)}
 								</div>
+								{/* Mobile CTA buttons — visible below lg breakpoint */}
+								{headerType !== 5 ? (
+									<div className="header-mobile-ctas d-lg-none">
+										{headerType === 8 ? (
+											<a
+												href={INTERNET_BANKING_LOGIN_URL}
+												className="header-mobile-ctas__link header-mobile-ctas__link--dark"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												Internet Banking
+											</a>
+										) : null}
+										<Link href="/open-account" className="header-mobile-ctas__link">
+											Open Account
+										</Link>
+									</div>
+								) : null}
 								{/* <!-- menu bar --> */}
 								<div
 									className="menu_bar mobile_menu_bar d-lg-none"

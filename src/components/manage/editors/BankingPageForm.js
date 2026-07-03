@@ -1,7 +1,12 @@
 "use client";
 
+import AsideConfigEditor from "@/components/manage/editors/AsideConfigEditor";
+import SolutionsEditor from "@/components/manage/editors/SolutionsEditor";
+import WhatsappConfigEditor from "@/components/manage/editors/WhatsappConfigEditor";
 import ManageFormField from "@/components/manage/forms/ManageFormField";
+import ManageFormSection from "@/components/manage/forms/ManageFormSection";
 import ManageMediaField from "@/components/manage/forms/ManageMediaField";
+import { CMS_IMAGE_SIZES } from "@/lib/cms/imageSizes";
 import ManageObjectList from "@/components/manage/forms/ManageObjectList";
 import ManageStringList from "@/components/manage/forms/ManageStringList";
 
@@ -16,13 +21,16 @@ const faqFields = [
 	{ key: "answer", label: "Answer", type: "textarea", rows: 3 },
 ];
 
-const BankingPageForm = ({ page, onChange }) => {
+const BankingPageForm = ({ page, onChange, onSaveSection }) => {
 	const update = (key, value) => onChange({ ...page, [key]: value });
+	const layout = page.layout || "product";
+	const isWhatsappLayout = layout === "whatsapp";
+	const save = (sectionName) =>
+		onSaveSection ? () => onSaveSection(sectionName) : undefined;
 
 	return (
 		<div className="manage-form__sections">
-			<section className="manage-form__section">
-				<h2>Page details</h2>
+			<ManageFormSection title="Page details" onSave={save("Page details")}>
 				<div className="manage-form__grid">
 					<ManageFormField
 						label="Page title"
@@ -48,6 +56,17 @@ const BankingPageForm = ({ page, onChange }) => {
 						help="Theme icon class, e.g. tji-worldwide"
 					/>
 				</div>
+				<label className="manage-field">
+					<span className="manage-field__label">Page layout</span>
+					<select
+						className="manage-field__input"
+						value={layout}
+						onChange={(e) => update("layout", e.target.value)}
+					>
+						<option value="product">Product layout (tabbed containers)</option>
+						<option value="whatsapp">WhatsApp layout</option>
+					</select>
+				</label>
 				<ManageFormField
 					label="Headline"
 					value={page.titleLarge}
@@ -59,21 +78,26 @@ const BankingPageForm = ({ page, onChange }) => {
 					value={page.shortDesc}
 					onChange={(v) => update("shortDesc", v)}
 				/>
-			</section>
+			</ManageFormSection>
 
-			<section className="manage-form__section">
-				<h2>Hero image / banner</h2>
+			<ManageFormSection title="Images" onSave={save("Images")}>
 				<ManageMediaField
-					label="Page image"
+					label="Top banner image"
+					value={page.bannerImage || ""}
+					onChange={(v) => update("bannerImage", v)}
+					recommendedSize={CMS_IMAGE_SIZES.pageBanner}
+					help="Wide banner at the top of the page."
+				/>
+				<ManageMediaField
+					label="Main hero image"
 					value={page.heroImage || ""}
 					onChange={(v) => update("heroImage", v)}
-					help="Optional image shown on the page. JPG, PNG, WebP, or MP4."
-					accept="image/*,video/*"
+					recommendedSize={CMS_IMAGE_SIZES.pageHero}
+					help="Shown below the banner and in the sidebar photo card."
 				/>
-			</section>
+			</ManageFormSection>
 
-			<section className="manage-form__section">
-				<h2>Main content</h2>
+			<ManageFormSection title="Main content" onSave={save("Main content")}>
 				<ManageFormField
 					label="Introduction paragraph"
 					type="textarea"
@@ -86,18 +110,43 @@ const BankingPageForm = ({ page, onChange }) => {
 					value={page.desc2}
 					onChange={(v) => update("desc2", v)}
 				/>
-			</section>
+			</ManageFormSection>
 
-			<section className="manage-form__section">
+			{!isWhatsappLayout ? (
+				<ManageFormSection
+					title="Solution containers"
+					onSave={save("Solution containers")}
+				>
+					<SolutionsEditor
+						solutions={page.solutions || []}
+						onChange={(v) => update("solutions", v)}
+					/>
+				</ManageFormSection>
+			) : (
+				<ManageFormSection
+					title="WhatsApp page layout"
+					onSave={save("WhatsApp page layout")}
+				>
+					<WhatsappConfigEditor
+						config={page.whatsappConfig || {}}
+						onChange={(v) => update("whatsappConfig", v)}
+					/>
+				</ManageFormSection>
+			)}
+
+			<ManageFormSection
+				title="Key features"
+				onSave={save("Key features")}
+			>
 				<ManageStringList
-					label="Key features"
+					label="Key features (sidebar highlights)"
 					items={page.features || []}
 					onChange={(v) => update("features", v)}
 					placeholder="e.g. Mobile banking"
 				/>
-			</section>
+			</ManageFormSection>
 
-			<section className="manage-form__section">
+			<ManageFormSection title="Benefits" onSave={save("Benefits")}>
 				<ManageObjectList
 					label="Benefits"
 					items={page.benefits || []}
@@ -105,9 +154,12 @@ const BankingPageForm = ({ page, onChange }) => {
 					onChange={(v) => update("benefits", v)}
 					addLabel="+ Add benefit"
 				/>
-			</section>
+			</ManageFormSection>
 
-			<section className="manage-form__section">
+			<ManageFormSection
+				title="Frequently asked questions"
+				onSave={save("Frequently asked questions")}
+			>
 				<ManageObjectList
 					label="Frequently asked questions"
 					items={page.faqs || []}
@@ -115,7 +167,16 @@ const BankingPageForm = ({ page, onChange }) => {
 					onChange={(v) => update("faqs", v)}
 					addLabel="+ Add question"
 				/>
-			</section>
+			</ManageFormSection>
+
+			{!isWhatsappLayout ? (
+				<ManageFormSection title="Sidebar cards" onSave={save("Sidebar cards")}>
+					<AsideConfigEditor
+						config={page.asideConfig || {}}
+						onChange={(v) => update("asideConfig", v)}
+					/>
+				</ManageFormSection>
+			) : null}
 		</div>
 	);
 };

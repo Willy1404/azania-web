@@ -11,7 +11,7 @@ export async function POST(request) {
 	try {
 		const formData = await request.formData();
 		const file = formData.get("file");
-		const result = await saveUploadedFile(file);
+		const result = await saveUploadedFile(file, session.email);
 		return NextResponse.json(result);
 	} catch (error) {
 		return NextResponse.json(

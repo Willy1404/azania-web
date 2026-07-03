@@ -1,9 +1,11 @@
-import Link from "next/link";
+import ManageDashboardStats from "@/components/manage/ManageDashboardStats";
 import ManageShell from "@/components/manage/ManageShell";
 import { requirePortalSession } from "@/lib/cms/auth";
+import { getDashboardStats } from "@/lib/cms/getDashboardStats";
 import {
 	getModulesForRole,
 	getPortal,
+	getSidebarModules,
 } from "@/lib/cms/portals";
 import { redirect, notFound } from "next/navigation";
 
@@ -25,6 +27,8 @@ export default async function ManageDashboardPage({ params }) {
 	}
 
 	const modules = getModulesForRole(session.role);
+	const contentModules = getSidebarModules(portal, session.role);
+	const stats = await getDashboardStats(session.role);
 	const firstName = session.name.split(" ")[0];
 
 	return (
@@ -35,7 +39,8 @@ export default async function ManageDashboardPage({ params }) {
 			userName={session.name}
 			userRole={session.role}
 			pageTitle="Dashboard"
-			pageSubtitle="Select a content module to edit and publish changes to the website."
+			pageSubtitle="Overview of your content workspace and publishing activity."
+			contentModules={contentModules}
 		>
 			<div className="manage-welcome">
 				<div className="manage-welcome__honeycomb" aria-hidden="true" />
@@ -54,48 +59,21 @@ export default async function ManageDashboardPage({ params }) {
 				</div>
 				<div className="manage-welcome__stats">
 					<div className="manage-welcome__stat">
-						<strong>{modules.length}</strong>
-						<span>Modules</span>
+						<strong>{stats.totalItems}</strong>
+						<span>Items</span>
+					</div>
+					<div className="manage-welcome__stat">
+						<strong>{stats.totalPages}</strong>
+						<span>Pages</span>
 					</div>
 					<div className="manage-welcome__stat">
 						<strong>Live</strong>
 						<span>Publishing</span>
 					</div>
-					<div className="manage-welcome__stat">
-						<strong>Secure</strong>
-						<span>Access</span>
-					</div>
 				</div>
 			</div>
 
-			<div className="manage-section-head">
-				<h2>Content modules</h2>
-				<p>Pick a module to manage pages, media, and published information.</p>
-			</div>
-
-			<div className="manage-modules">
-				{modules.map((module, index) => (
-					<Link
-						key={module.key}
-						href={`/manage/${portal}/content/${module.key}`}
-						className="manage-module-card manage-animate-in"
-						style={{ animationDelay: `${index * 0.06}s` }}
-					>
-						<div className="manage-module-card__icon">
-							<i className={module.icon} aria-hidden="true" />
-						</div>
-						<div className="manage-module-card__body">
-							<span className="manage-module-card__tag">Module</span>
-							<h3>{module.label}</h3>
-							<p>{module.description}</p>
-						</div>
-						<span className="manage-module-card__link">
-							Open editor
-							<i className="tji-arrow-right-long" aria-hidden="true" />
-						</span>
-					</Link>
-				))}
-			</div>
+			<ManageDashboardStats stats={stats} />
 		</ManageShell>
 	);
 }

@@ -2,12 +2,14 @@ import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import ForexRatesTicker from "@/components/sections/funfacts/ForexRatesTicker";
 import getForexRates from "@/libs/getForexRates";
 import getHomeNews from "@/libs/getHomeNews";
+import getHomepage from "@/libs/getHomepage";
 import Image from "next/image";
 import Link from "next/link";
 
 const Funfact3 = async () => {
 	const newsItems = await getHomeNews();
 	const forex = await getForexRates();
+	const { newsSection } = await getHomepage();
 
 	return (
 		<section className="azania-news-forex section-gap">
@@ -16,16 +18,14 @@ const Funfact3 = async () => {
 					<div className="col-lg-7">
 						<div className="azania-news-forex__intro wow fadeInUp" data-wow-delay=".2s">
 							<span className="azania-section-label">
-								News &amp; Insight
+								{newsSection.label}
 								<span className="azania-section-label__line" aria-hidden="true" />
 							</span>
-							<h2 className="sec-title">
-								Learn From Our Experts: Dive Into Insights And News.
-							</h2>
+							<h2 className="sec-title">{newsSection.title}</h2>
 							<div className="azania-news-forex__cta wow fadeInUp" data-wow-delay=".4s">
 								<ButtonPrimary
-									text={"Explore News & Insight"}
-									url={"/reports"}
+									text={newsSection.ctaText}
+									url={newsSection.ctaUrl}
 									className={"transparent-btn azania-outline-btn"}
 								/>
 							</div>

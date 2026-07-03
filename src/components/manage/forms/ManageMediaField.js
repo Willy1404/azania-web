@@ -1,5 +1,6 @@
 "use client";
 
+import { isCmsMediaUrl } from "@/lib/cms/mediaUrls";
 import { useRef, useState } from "react";
 
 const ManageMediaField = ({
@@ -7,20 +8,26 @@ const ManageMediaField = ({
 	value,
 	onChange,
 	accept = "image/*,video/*,application/pdf",
+	recommendedSize,
 	help,
 }) => {
 	const inputRef = useRef(null);
 	const [uploading, setUploading] = useState(false);
 	const [error, setError] = useState("");
+	const [previewFailed, setPreviewFailed] = useState(false);
 
-	const isImage = value?.match(/\.(jpg|jpeg|png|webp|gif|svg)(\?|$)/i);
-	const isVideo = value?.match(/\.(mp4|webm|mov)(\?|$)/i);
-	const isPdf = value?.match(/\.pdf(\?|$)/i);
+	const isCmsMedia = isCmsMediaUrl(value);
+	const isImage =
+		Boolean(value?.match(/\.(jpg|jpeg|png|webp|gif|svg)(\?|$)/i)) ||
+		(isCmsMedia && !previewFailed);
+	const isVideo = Boolean(value?.match(/\.(mp4|webm|mov)(\?|$)/i));
+	const isPdf = Boolean(value?.match(/\.pdf(\?|$)/i));
 
 	const handleUpload = async (file) => {
 		if (!file) return;
 		setUploading(true);
 		setError("");
+		setPreviewFailed(false);
 
 		try {
 			const formData = new FormData();
@@ -38,6 +45,7 @@ const ManageMediaField = ({
 			}
 
 			onChange(result.url);
+			setPreviewFailed(false);
 		} catch {
 			setError("Unable to upload file.");
 		} finally {
@@ -47,12 +55,17 @@ const ManageMediaField = ({
 
 	return (
 		<div className="manage-field manage-media">
-			<span className="manage-field__label">{label}</span>
+			<div className="manage-media__label-row">
+				<span className="manage-field__label">{label}</span>
+				{recommendedSize ? (
+					<span className="manage-media__size">Required size: {recommendedSize}</span>
+				) : null}
+			</div>
 
 			{value ? (
 				<div className="manage-media__preview">
 					{isImage ? (
-						<img src={value} alt="" />
+						<img src={value} alt="" onError={() => setPreviewFailed(true)} />
 					) : isVideo ? (
 						<video src={value} controls />
 					) : isPdf ? (
@@ -67,7 +80,10 @@ const ManageMediaField = ({
 					<button
 						type="button"
 						className="manage-media__remove"
-						onClick={() => onChange("")}
+						onClick={() => {
+							setPreviewFailed(false);
+							onChange("");
+						}}
 					>
 						Remove
 					</button>
@@ -95,7 +111,10 @@ const ManageMediaField = ({
 					className="manage-field__input"
 					type="text"
 					value={value || ""}
-					onChange={(e) => onChange(e.target.value)}
+					onChange={(e) => {
+						setPreviewFailed(false);
+						onChange(e.target.value);
+					}}
 					placeholder="Paste image or file URL"
 				/>
 			</div>

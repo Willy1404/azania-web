@@ -19,6 +19,7 @@ const REVALIDATE_PATHS = {
 	personal_banking_pages: ["/", "/personal-banking"],
 	treasury_capital_pages: ["/", "/treasury-and-capital"],
 	home_news: ["/"],
+	homepage: ["/"],
 	forex_rates: ["/"],
 	faq_items: ["/faq"],
 	reports: ["/reports"],
@@ -26,9 +27,24 @@ const REVALIDATE_PATHS = {
 	nav_items: ["/"],
 };
 
-function revalidateContent(contentKey) {
+const COLLECTION_BASE_PATHS = {
+	business_banking_pages: "/business-banking",
+	personal_banking_pages: "/personal-banking",
+	treasury_capital_pages: "/treasury-and-capital",
+};
+
+function revalidateContent(contentKey, items) {
 	for (const path of REVALIDATE_PATHS[contentKey] || ["/"]) {
 		revalidatePath(path);
+	}
+
+	const basePath = COLLECTION_BASE_PATHS[contentKey];
+	if (basePath && Array.isArray(items)) {
+		for (const item of items) {
+			if (item?.slug) {
+				revalidatePath(`${basePath}/${item.slug}`);
+			}
+		}
 	}
 }
 
@@ -76,7 +92,7 @@ export async function PUT(request, { params }) {
 				items: body.items,
 				updatedBy: session.email,
 			});
-			revalidateContent(contentKey);
+			revalidateContent(contentKey, body.items);
 			return NextResponse.json({ ok: true });
 		}
 
@@ -87,7 +103,7 @@ export async function PUT(request, { params }) {
 				data: body.item,
 				updatedBy: session.email,
 			});
-			revalidateContent(contentKey);
+			revalidateContent(contentKey, [body.item]);
 			return NextResponse.json({ ok: true });
 		}
 

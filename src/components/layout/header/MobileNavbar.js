@@ -1,3 +1,5 @@
+import NavMenuLink from "@/components/shared/NavMenuLink";
+import getMegaMenuItems from "@/libs/getMegaMenuItems";
 import Link from "next/link";
 import MobileMenuItem from "./MobileMenuItem";
 
@@ -24,10 +26,36 @@ const MobileNavbar = ({ navItems = [] }) => {
 								if (!hasSubmenu) {
 									return (
 										<li key={navItem?.id}>
-											<Link href={navItem?.path ? navItem?.path : "#"}>
+											<NavMenuLink href={navItem?.path ? navItem?.path : "#"}>
 												{navItem?.name}
-											</Link>
+											</NavMenuLink>
 										</li>
+									);
+								}
+
+								if (
+									navItem?.menuType === "personal-flyout" ||
+									navItem?.path === "/personal-banking"
+								) {
+									return (
+										<MobileMenuItem key={navItem?.id} text={navItem?.name}>
+											{navItem.submenu.map((group) => (
+												<MobileMenuItem key={group.id} text={group.name}>
+													{group.items?.map((item) => (
+														<li key={item.id}>
+															<NavMenuLink href={item.path || "#"}>
+																{item.icon ? (
+																	<span className="azania-mega-menu-icon">
+																		<i className={item.icon} aria-hidden="true" />
+																	</span>
+																) : null}
+																{item.name}
+															</NavMenuLink>
+														</li>
+													))}
+												</MobileMenuItem>
+											))}
+										</MobileMenuItem>
 									);
 								}
 
@@ -35,7 +63,6 @@ const MobileNavbar = ({ navItems = [] }) => {
 									<MobileMenuItem
 										key={navItem?.id}
 										text={navItem?.name}
-										url={navItem?.path ? navItem?.path : "#"}
 										submenuClass={
 											"header__mega-menu mega-menu mega-menu-pages azania-mega-menu"
 										}
@@ -47,8 +74,8 @@ const MobileNavbar = ({ navItems = [] }) => {
 														<div className="mega-menu-pages-single-inner">
 															<h6 className="mega-menu-title">{group?.name}</h6>
 															<div className="mega-menu-list">
-																{group?.items?.map((item) => (
-																	<Link key={item?.id} href={item?.path || "#"}>
+																{getMegaMenuItems(group)?.map((item) => (
+																	<NavMenuLink key={item?.id} href={item?.path || "#"}>
 																		{item?.icon ? (
 																			<span className="azania-mega-menu-icon">
 																				<i className={item.icon}></i>
@@ -57,7 +84,7 @@ const MobileNavbar = ({ navItems = [] }) => {
 																			""
 																		)}
 																		{item?.name}
-																	</Link>
+																	</NavMenuLink>
 																))}
 															</div>
 														</div>

@@ -1,94 +1,760 @@
 [
   {
     "id": 1,
-    "slug": "for-the-future",
-    "title": "For The Future",
+    "slug": "savings-account",
+    "title": "Savings Account",
     "category": "For The Future",
     "categoryId": 1,
-    "icon": "tji-strategy",
-    "titleLarge": "Plan ahead with savings and investment solutions",
-    "shortDesc": "Build long-term financial security with savings accounts, fixed deposits, and investment options.",
-    "desc1": "Azania Bank helps you prepare for tomorrow with personal savings and investment products designed to grow your wealth steadily over time.",
-    "desc2": "Whether you are saving for education, retirement, or a major life goal, our For The Future solutions give you flexible options with competitive returns.",
-    "features": ["Savings accounts", "Fixed and term deposits", "Goal-based saving plans", "Investment advisory support"],
+    "icon": "tji-budget",
+    "titleLarge": "Savings Account",
+    "shortDesc": "Opening balance TZS 15,000. Multi-currency support in TZS, USD, EUR, and GBP.",
+    "desc1": "Build your savings with unlimited access, SMS alerts, a free biannual statement, and access to 30+ ATMs across the Azania Bank network.",
+    "desc2": "Build your savings with unlimited access, SMS alerts, a free biannual statement, and access to 30+ ATMs across the Azania Bank network.",
+    "features": [
+      "Opening balance TZS 15,000",
+      "Multi-currency: TZS, USD, EUR, GBP",
+      "SMS alerts and free biannual statement",
+      "Access to 30+ ATMs"
+    ],
     "benefits": [
-      { "number": "01.", "title": "Long-Term Growth", "desc": "Grow your savings with structured deposit and investment options." },
-      { "number": "02.", "title": "Financial Security", "desc": "Build a safety net for future needs and unexpected events." },
-      { "number": "03.", "title": "Flexible Plans", "desc": "Choose tenors and products that match your goals and timeline." }
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
     ],
     "faqs": [
-      { "question": "What savings products are available?", "answer": "We offer regular savings accounts, fixed deposits, and goal-based savings plans for personal customers." },
-      { "question": "What is the minimum deposit for a fixed deposit?", "answer": "Minimum amounts vary by product. Visit your branch or contact us for current rates and requirements." },
-      { "question": "Can I open a savings account online?", "answer": "You can start the process at any Azania Bank branch with valid identification and required documentation." }
+      {
+        "question": "How do I open a Savings Account?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
     ]
   },
   {
     "id": 2,
-    "slug": "for-today",
-    "title": "For Today",
-    "category": "For Today",
-    "categoryId": 2,
-    "icon": "tji-operations",
-    "titleLarge": "Everyday banking made simple",
-    "shortDesc": "Current accounts, debit cards, and digital tools for your daily financial needs.",
-    "desc1": "For Today is about managing your money with ease — paying bills, receiving salary, transferring funds, and accessing cash when you need it.",
-    "desc2": "Azania Bank personal accounts come with mobile and internet banking, VISA cards, and a reliable branch and agency network across Tanzania.",
-    "features": ["Current and salary accounts", "Azania VISA debit cards", "Mobile and internet banking", "Bill payments and transfers"],
+    "slug": "dhamira-account",
+    "title": "Dhamira Account",
+    "category": "For The Future",
+    "categoryId": 1,
+    "icon": "tji-strategy",
+    "titleLarge": "Dhamira Account",
+    "shortDesc": "Goal-based savings for land, house, car, education, wedding, and more.",
+    "desc1": "Save for a specific purpose with a minimum 12-month plan, attractive interest rates, and a minimum opening balance of TZS 50,000 or USD/EUR/GBP 50.",
+    "desc2": "Save for a specific purpose with a minimum 12-month plan, attractive interest rates, and a minimum opening balance of TZS 50,000 or USD/EUR/GBP 50.",
+    "features": [
+      "Purpose-driven savings goals",
+      "Minimum opening TZS 50,000 or USD/EUR/GBP 50",
+      "Minimum plan of 12 months",
+      "Attractive interest rates"
+    ],
     "benefits": [
-      { "number": "01.", "title": "Daily Convenience", "desc": "Manage everyday transactions quickly and securely." },
-      { "number": "02.", "title": "Digital Access", "desc": "Bank from your phone or computer anytime, anywhere." },
-      { "number": "03.", "title": "Wide Network", "desc": "Access services through branches, ATMs, and agency points." }
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
     ],
     "faqs": [
-      { "question": "What do I need to open a personal current account?", "answer": "Valid identification, proof of address, and completed account opening forms are required." },
-      { "question": "Is mobile banking free?", "answer": "Mobile banking enrollment is available to account holders. Standard transaction fees may apply as per the tariff guide." },
-      { "question": "Can I get a debit card with my account?", "answer": "Yes. Eligible personal accounts can be linked to an Azania VISA debit card." }
+      {
+        "question": "How do I open a Dhamira Account?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
     ]
   },
   {
     "id": 3,
-    "slug": "for-the-family",
-    "title": "For The Family",
-    "category": "For The Family",
-    "categoryId": 3,
-    "icon": "tji-user",
-    "titleLarge": "Banking solutions for your whole family",
-    "shortDesc": "Joint accounts, children's savings, and family-focused financial products.",
-    "desc1": "For The Family brings together accounts and savings options that help households manage shared finances and plan for children and dependents.",
-    "desc2": "From joint accounts for couples to junior savings for children, Azania Bank supports families at every stage.",
-    "features": ["Joint accounts", "Children's savings accounts", "Family financial planning", "Shared account management"],
+    "slug": "fixed-deposit",
+    "title": "Fixed Deposit",
+    "category": "For The Future",
+    "categoryId": 1,
+    "icon": "tji-performance",
+    "titleLarge": "Fixed Deposit",
+    "shortDesc": "Lock in your savings for a fixed term with competitive returns.",
+    "desc1": "Azania Bank fixed deposits help you grow funds securely over a chosen tenor with structured interest paid at maturity or as agreed.",
+    "desc2": "Azania Bank fixed deposits help you grow funds securely over a chosen tenor with structured interest paid at maturity or as agreed.",
+    "features": [
+      "Fixed tenors",
+      "Competitive interest rates",
+      "Secure capital preservation",
+      "Flexible currency options"
+    ],
     "benefits": [
-      { "number": "01.", "title": "Shared Management", "desc": "Joint accounts allow couples and partners to manage finances together." },
-      { "number": "02.", "title": "Children's Future", "desc": "Start saving early for education and other family goals." },
-      { "number": "03.", "title": "One Bank, One Family", "desc": "Consolidate family banking with a trusted local partner." }
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
     ],
     "faqs": [
-      { "question": "Can I open a joint account?", "answer": "Yes. Joint accounts are available for two or more account holders with agreed signatory arrangements." },
-      { "question": "Is there a savings account for children?", "answer": "Yes. We offer junior savings accounts designed for minors, managed by a parent or guardian." },
-      { "question": "How many signatories can a joint account have?", "answer": "Signatory arrangements depend on account type. Your branch can explain available options." }
+      {
+        "question": "How do I open a Fixed Deposit?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
     ]
   },
   {
     "id": 4,
-    "slug": "loans",
-    "title": "Loans",
-    "category": "Quick Links",
-    "categoryId": 4,
-    "icon": "tji-budget",
-    "titleLarge": "Personal loans to meet your goals",
-    "shortDesc": "Salary advances, personal loans, and asset finance for individuals.",
-    "desc1": "Azania Bank personal loans help you finance education, home improvements, emergencies, and other personal needs with structured repayment plans.",
-    "desc2": "Our loan products are designed with transparent terms and assessment processes that consider your income and repayment capacity.",
-    "features": ["Personal loans", "Salary advance facilities", "Asset and vehicle finance", "Competitive interest rates"],
+    "slug": "students-account",
+    "title": "Students Account (Aspire Account)",
+    "category": "For Today",
+    "categoryId": 2,
+    "icon": "tji-user",
+    "titleLarge": "Students Account (Aspire Account)",
+    "shortDesc": "Everyday banking designed for students and young professionals.",
+    "desc1": "The Aspire Account supports students with affordable banking, digital access, and tools to manage daily finances while studying.",
+    "desc2": "The Aspire Account supports students with affordable banking, digital access, and tools to manage daily finances while studying.",
+    "features": [
+      "Student-friendly banking",
+      "Digital access",
+      "Debit card eligibility",
+      "Affordable maintenance"
+    ],
     "benefits": [
-      { "number": "01.", "title": "Flexible Purpose", "desc": "Finance education, medical needs, home improvements, and more." },
-      { "number": "02.", "title": "Structured Repayment", "desc": "Clear schedules aligned to your salary or income cycle." },
-      { "number": "03.", "title": "Quick Assessment", "desc": "Efficient processing for eligible personal loan applicants." }
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
     ],
     "faqs": [
-      { "question": "Who qualifies for a personal loan?", "answer": "Qualification depends on income, employment status, credit history, and ability to repay. Visit your branch for assessment." },
-      { "question": "What documents are required?", "answer": "Typically ID, proof of income, bank statements, and completed loan application forms." },
-      { "question": "How long does approval take?", "answer": "Timelines vary by loan type and documentation completeness. Your branch can provide current estimates." }
+      {
+        "question": "How do I open a Students Account (Aspire Account)?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "diaspora-account",
+    "title": "Diaspora Account (Asili Account)",
+    "category": "For Today",
+    "categoryId": 2,
+    "icon": "tji-worldwide",
+    "titleLarge": "Diaspora Account (Asili Account)",
+    "shortDesc": "Banking for Tanzanians living abroad with savings and investment options.",
+    "desc1": "The Asili Diaspora Account connects you to home — save, invest, and manage finances in Tanzania while living overseas.",
+    "desc2": "The Asili Diaspora Account connects you to home — save, invest, and manage finances in Tanzania while living overseas.",
+    "features": [
+      "For Tanzanians abroad",
+      "Savings in Tanzania",
+      "Investment options",
+      "Remittance-friendly banking"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Diaspora Account (Asili Account)?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "mwanamke-hodari",
+    "title": "Mwanamke Hodari",
+    "category": "For Today",
+    "categoryId": 2,
+    "icon": "tji-excellence",
+    "titleLarge": "Mwanamke Hodari",
+    "shortDesc": "Empowering women with tailored personal banking and financial support.",
+    "desc1": "Mwanamke Hodari supports enterprising women with banking solutions designed for personal and business growth.",
+    "desc2": "Mwanamke Hodari supports enterprising women with banking solutions designed for personal and business growth.",
+    "features": [
+      "Tailored for women",
+      "Savings and transaction support",
+      "Financial empowerment focus",
+      "Access to Azania Bank network"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Mwanamke Hodari?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "watoto-account",
+    "title": "Watoto Account",
+    "category": "For The Family",
+    "categoryId": 3,
+    "icon": "tji-user",
+    "titleLarge": "Watoto Account",
+    "shortDesc": "Children's account for kids under 18 — TZS 10,000 opening, no monthly charges.",
+    "desc1": "Help children learn to save with a Watoto Account featuring no monthly charges, limited withdrawals, and their own bank card.",
+    "desc2": "Help children learn to save with a Watoto Account featuring no monthly charges, limited withdrawals, and their own bank card.",
+    "features": [
+      "For children under 18",
+      "Opening balance TZS 10,000",
+      "No monthly charges",
+      "Limited to 4 withdrawals per year",
+      "Own a bank card"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Watoto Account?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "wastaafu-account",
+    "title": "Wastaafu Account",
+    "category": "For The Family",
+    "categoryId": 3,
+    "icon": "tji-budget",
+    "titleLarge": "Wastaafu Account",
+    "shortDesc": "Retirement-focused savings for a secure and comfortable future.",
+    "desc1": "The Wastaafu Account helps retirees and pre-retirees manage income and savings with products suited to life after work.",
+    "desc2": "The Wastaafu Account helps retirees and pre-retirees manage income and savings with products suited to life after work.",
+    "features": [
+      "Retirement-focused savings",
+      "Steady access to funds",
+      "Structured for pensioners",
+      "Branch and digital support"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Wastaafu Account?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "ziada-account",
+    "title": "Ziada Account",
+    "category": "For The Family",
+    "categoryId": 3,
+    "icon": "tji-strategy",
+    "titleLarge": "Ziada Account",
+    "shortDesc": "Extra savings potential for households planning together.",
+    "desc1": "Ziada Account offers families additional savings flexibility to support shared goals and household financial planning.",
+    "desc2": "Ziada Account offers families additional savings flexibility to support shared goals and household financial planning.",
+    "features": [
+      "Household savings",
+      "Flexible deposits",
+      "Competitive returns",
+      "Family-oriented banking"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Ziada Account?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "consumer-loans",
+    "title": "Consumer Loans",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-budget",
+    "titleLarge": "Consumer Loans",
+    "shortDesc": "Finance personal purchases and consumer needs with structured repayment.",
+    "desc1": "Consumer loans from Azania Bank help you acquire goods and services with clear terms and manageable instalments.",
+    "desc2": "Consumer loans from Azania Bank help you acquire goods and services with clear terms and manageable instalments.",
+    "features": [
+      "Personal consumer finance",
+      "Structured repayment",
+      "Transparent terms"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Consumer Loans?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "mortgage-loans",
+    "title": "Mortgage Loans",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-home",
+    "titleLarge": "Mortgage Loans",
+    "shortDesc": "Home financing solutions for buying or building property.",
+    "desc1": "Azania Bank mortgage loans support home ownership with long-term financing aligned to your income and property goals.",
+    "desc2": "Azania Bank mortgage loans support home ownership with long-term financing aligned to your income and property goals.",
+    "features": [
+      "Home purchase finance",
+      "Long-term tenors",
+      "Property-focused assessment"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Mortgage Loans?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "personal-loans",
+    "title": "Personal Loans",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-user",
+    "titleLarge": "Personal Loans",
+    "shortDesc": "General-purpose personal loans for education, emergencies, and life events.",
+    "desc1": "Personal loans provide flexible financing for individual needs with assessment based on your repayment capacity.",
+    "desc2": "Personal loans provide flexible financing for individual needs with assessment based on your repayment capacity.",
+    "features": [
+      "Flexible purpose",
+      "Competitive rates",
+      "Clear repayment schedule"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Personal Loans?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "salary-advance-loans",
+    "title": "Salary Advance Loans",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-operations",
+    "titleLarge": "Salary Advance Loans",
+    "shortDesc": "Short-term advances against salary for urgent personal needs.",
+    "desc1": "Salary advance facilities offer quick access to funds for salaried customers with repayment aligned to your pay cycle.",
+    "desc2": "Salary advance facilities offer quick access to funds for salaried customers with repayment aligned to your pay cycle.",
+    "features": [
+      "For salaried customers",
+      "Quick access",
+      "Pay-cycle repayment"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Salary Advance Loans?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "kikundi-account",
+    "title": "Kikundi Account",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-manage",
+    "titleLarge": "Kikundi Account",
+    "shortDesc": "Group savings and lending for communities and informal groups.",
+    "desc1": "Kikundi Account supports groups with collective savings and access to group-based lending structures.",
+    "desc2": "Kikundi Account supports groups with collective savings and access to group-based lending structures.",
+    "features": [
+      "Group savings",
+      "Collective lending",
+      "Community banking"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Kikundi Account?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "uni-mshiko",
+    "title": "UNI-MSHIKO",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-box",
+    "titleLarge": "UNI-MSHIKO",
+    "shortDesc": "Support product designed for resilience and emergency needs.",
+    "desc1": "UNI-MSHIKO provides personal customers with access to support financing when unexpected needs arise.",
+    "desc2": "UNI-MSHIKO provides personal customers with access to support financing when unexpected needs arise.",
+    "features": [
+      "Emergency support",
+      "Structured access",
+      "Personal resilience"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a UNI-MSHIKO?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "wastaafu-loans",
+    "title": "Wastaafu Loans",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-budget",
+    "titleLarge": "Wastaafu Loans",
+    "shortDesc": "Loans tailored for retirees and pension-backed customers.",
+    "desc1": "Wastaafu Loans offer financing options suited to retirement income and pension arrangements.",
+    "desc2": "Wastaafu Loans offer financing options suited to retirement income and pension arrangements.",
+    "features": [
+      "Retirement-focused lending",
+      "Pension-aware assessment",
+      "Flexible terms"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Wastaafu Loans?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "mwanamke-hodari-loans",
+    "title": "Mwanamke Hodari Loans",
+    "category": "Loans",
+    "categoryId": 4,
+    "icon": "tji-excellence",
+    "titleLarge": "Mwanamke Hodari Loans",
+    "shortDesc": "Loan products supporting women entrepreneurs and professionals.",
+    "desc1": "Mwanamke Hodari Loans provide financing designed to support women's personal and business ambitions.",
+    "desc2": "Mwanamke Hodari Loans provide financing designed to support women's personal and business ambitions.",
+    "features": [
+      "Women-focused lending",
+      "Entrepreneurship support",
+      "Structured repayment"
+    ],
+    "benefits": [
+      {
+        "number": "01.",
+        "title": "Trusted banking",
+        "desc": "Personal solutions backed by Azania Bank's local expertise."
+      },
+      {
+        "number": "02.",
+        "title": "Flexible access",
+        "desc": "Branch, digital, and agency channels to suit how you bank."
+      },
+      {
+        "number": "03.",
+        "title": "Dedicated support",
+        "desc": "Our teams help you choose and manage the right product."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How do I open a Mwanamke Hodari Loans?",
+        "answer": "Visit any Azania Bank branch with valid identification and required documentation. Our staff will guide you through account opening."
+      },
+      {
+        "question": "What fees apply?",
+        "answer": "Fees and charges are listed in the Azania Bank Tariff Guide. Your branch can confirm current rates for this product."
+      }
     ]
   }
 ]

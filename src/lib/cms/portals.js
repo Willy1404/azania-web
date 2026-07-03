@@ -37,9 +37,28 @@ export const PORTALS = {
 	},
 };
 
+/** Admin sidebar mirrors the main website navigation. */
+export const ADMIN_NAV_MODULE_KEYS = [
+	"homepage",
+	"business_banking_pages",
+	"personal_banking_pages",
+	"treasury_capital_pages",
+	"about_azania_bank",
+	"support",
+	"karol_ai",
+];
+
 export const CONTENT_MODULES = {
+	homepage: {
+		label: "Home",
+		description: "Hero banner, about section, news cards, and forex panel on the homepage.",
+		icon: "tji-home",
+		collection: false,
+		roles: ["ADMIN"],
+		editPath: "/manage/{portal}/content/homepage",
+	},
 	business_banking_pages: {
-		label: "Business Banking Pages",
+		label: "Business Banking",
 		description: "Product and service detail pages under Business Banking.",
 		icon: "tji-operations",
 		collection: true,
@@ -47,7 +66,7 @@ export const CONTENT_MODULES = {
 		editPath: "/manage/{portal}/content/business_banking_pages",
 	},
 	personal_banking_pages: {
-		label: "Personal Banking Pages",
+		label: "Personal Banking",
 		description: "Personal banking product pages.",
 		icon: "tji-user",
 		collection: true,
@@ -55,20 +74,37 @@ export const CONTENT_MODULES = {
 		editPath: "/manage/{portal}/content/personal_banking_pages",
 	},
 	treasury_capital_pages: {
-		label: "Treasury & Capital Pages",
+		label: "Treasury & Capital",
 		description: "Treasury, forex, and capital market pages.",
 		icon: "tji-worldwide",
 		collection: true,
 		roles: ["ADMIN", "TREASURY_CAPITAL"],
 		editPath: "/manage/{portal}/content/treasury_capital_pages",
 	},
+	about_azania_bank: {
+		label: "About Azania Bank",
+		description: "About page content and financial reports.",
+		icon: "tji-excellence",
+		collection: false,
+		roles: ["ADMIN"],
+		editPath: "/manage/{portal}/content/about_azania_bank",
+	},
+	support: {
+		label: "Support",
+		description: "FAQ, tariff guide, and support centre content.",
+		icon: "tji-box",
+		collection: false,
+		roles: ["ADMIN"],
+		editPath: "/manage/{portal}/content/support",
+	},
 	home_news: {
 		label: "Home News & Insight",
-		description: "News items on the homepage.",
+		description: "News items on the homepage (managed via Home module).",
 		icon: "tji-comment",
 		collection: false,
 		roles: ["ADMIN"],
 		editPath: "/manage/{portal}/content/home_news",
+		hiddenFromSidebar: true,
 	},
 	forex_rates: {
 		label: "Forex Rates",
@@ -77,30 +113,34 @@ export const CONTENT_MODULES = {
 		collection: false,
 		roles: ["ADMIN", "TREASURY_CAPITAL"],
 		editPath: "/manage/{portal}/content/forex_rates",
+		adminHiddenFromSidebar: true,
 	},
 	faq_items: {
 		label: "FAQ",
-		description: "Frequently asked questions.",
+		description: "Frequently asked questions (managed via Support module).",
 		icon: "tji-box",
 		collection: false,
 		roles: ["ADMIN"],
 		editPath: "/manage/{portal}/content/faq_items",
+		hiddenFromSidebar: true,
 	},
 	reports: {
 		label: "Financial Reports",
-		description: "Reports listing on the Reports page.",
+		description: "Reports listing (managed via About Azania Bank module).",
 		icon: "tji-envelop",
 		collection: false,
 		roles: ["ADMIN"],
 		editPath: "/manage/{portal}/content/reports",
+		hiddenFromSidebar: true,
 	},
 	tariff_sections: {
 		label: "Tariff Guide",
-		description: "Fee tables on the tariff guide page.",
+		description: "Fee tables (managed via Support module).",
 		icon: "tji-process-1",
 		collection: false,
 		roles: ["ADMIN"],
 		editPath: "/manage/{portal}/content/tariff_sections",
+		hiddenFromSidebar: true,
 	},
 	nav_items: {
 		label: "Navigation Menu",
@@ -109,8 +149,47 @@ export const CONTENT_MODULES = {
 		collection: false,
 		roles: ["ADMIN"],
 		editPath: "/manage/{portal}/content/nav_items",
+		hiddenFromSidebar: true,
+	},
+	karol_ai: {
+		label: "Karol AI",
+		description: "AI assistant knowledge base, conversations, analytics, and chatbot settings.",
+		icon: "tji-comment",
+		collection: false,
+		roles: ["ADMIN"],
+		editPath: "/manage/{portal}/content/karol_ai",
 	},
 };
+
+export function getSidebarModules(portalId, role) {
+	const order = new Map(ADMIN_NAV_MODULE_KEYS.map((key, index) => [key, index]));
+
+	let modules = getModulesForRole(role).filter((module) => {
+		if (module.hiddenFromSidebar) return false;
+		if (role === "ADMIN" && module.adminHiddenFromSidebar) return false;
+		return true;
+	});
+
+	if (role === "ADMIN") {
+		modules = modules.filter((module) => ADMIN_NAV_MODULE_KEYS.includes(module.key));
+	}
+
+	modules.sort((a, b) => {
+		const aOrder = order.get(a.key);
+		const bOrder = order.get(b.key);
+		if (aOrder !== undefined && bOrder !== undefined) return aOrder - bOrder;
+		if (aOrder !== undefined) return -1;
+		if (bOrder !== undefined) return 1;
+		return a.label.localeCompare(b.label);
+	});
+
+	return modules.map((module) => ({
+		key: module.key,
+		label: module.label,
+		icon: module.icon,
+		href: `/manage/${portalId}/content/${module.key}`,
+	}));
+}
 
 export function getPortal(portalId) {
 	return PORTALS[portalId] || null;

@@ -718,4 +718,165 @@
 		}
 	}
 }
+
+// Personal Banking — nested flyout (categories left, products fly out to the right)
+.mainmenu ul.azania-personal-flyout,
+.mainmenu ul.azania-personal-flyout__sub {
+	display: block !important;
+	flex-wrap: nowrap !important;
+	align-items: stretch !important;
+	column-gap: 0 !important;
+	gap: 0 !important;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.mainmenu ul > li > .azania-personal-flyout {
+	width: 248px;
+	min-width: 248px;
+	padding: 2px 0;
+	border-radius: 4px;
+	overflow: visible;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+	> li {
+		position: relative;
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	// Keep nested product panel visible when moving cursor across the gap
+	> li.has-dropdown::after {
+		content: "";
+		position: absolute;
+		inset-inline-start: 100%;
+		top: 0;
+		width: 12px;
+		height: 100%;
+	}
+}
+
+.azania-personal-flyout__category {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 8px 16px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--tj-color-heading-primary);
+	cursor: default;
+	user-select: none;
+
+	i {
+		font-size: 10px;
+		opacity: 0.45;
+		flex-shrink: 0;
+	}
+}
+
+.azania-personal-flyout__group {
+	&:hover,
+	&:focus-within {
+		> .azania-personal-flyout__category {
+			color: var(--tj-color-theme-primary);
+			background: rgba(31, 174, 243, 0.08);
+
+			i {
+				opacity: 1;
+				color: var(--tj-color-theme-primary);
+			}
+		}
+	}
+}
+
+.mainmenu ul.azania-personal-flyout__sub {
+	position: absolute;
+	inset-inline-start: calc(100% - 1px);
+	top: 0;
+	width: 310px;
+	min-width: 310px;
+	padding: 2px 0;
+	margin: 0;
+	border-radius: 4px;
+	background: var(--tj-color-common-white);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+	border-inline-start: 1px solid var(--tj-color-border-1);
+	opacity: 0;
+	visibility: hidden;
+	transform: scaleY(0);
+	transform-origin: top;
+	pointer-events: none;
+	transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+	z-index: 100;
+
+	> li {
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		position: relative;
+		z-index: auto;
+	}
+
+	> li > a {
+		display: flex !important;
+		align-items: center;
+		gap: 10px;
+		padding: 6px 14px !important;
+		margin: 0;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 1.25 !important;
+		color: var(--tj-color-heading-primary);
+		text-decoration: none;
+		transition: color 0.2s ease, background 0.2s ease;
+
+		&::before {
+			display: none !important;
+		}
+
+		&:hover {
+			color: var(--tj-color-theme-primary);
+			background: rgba(31, 174, 243, 0.06);
+		}
+	}
+}
+
+.azania-personal-flyout__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	flex: 0 0 18px;
+	color: var(--tj-color-theme-primary);
+	font-size: 16px;
+	line-height: 1;
+
+	i {
+		display: block;
+		font-size: 16px;
+		line-height: 1;
+	}
+}
+
+.azania-personal-flyout__label {
+	flex: 1;
+	min-width: 0;
+	line-height: 1.25;
+}
+
+.azania-personal-flyout__group:hover > .azania-personal-flyout__sub,
+.azania-personal-flyout__group:focus-within > .azania-personal-flyout__sub {
+	opacity: 1;
+	visibility: visible;
+	transform: scaleY(1);
+	pointer-events: auto;
+}
+
 /* !END: Mega Menu CSS */

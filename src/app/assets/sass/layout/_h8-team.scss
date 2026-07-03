@@ -43,7 +43,7 @@ START: Team CSS
 					border-radius: 100%;
 					margin-inline-start: auto;
 					margin-inline-end: auto;
-					@media #{$lg,$sm} {
+					@media #{$lg, $sm, $xs} {
 						width: 200px;
 						height: 200px;
 					}

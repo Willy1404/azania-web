@@ -156,7 +156,8 @@ START: Home 7 About CSS
 			}
 		}
 		&-desc {
-			width: 530px;
+			width: 100%;
+			max-width: 530px;
 			padding-top: 50px;
 			padding-bottom: 55px;
 			padding-inline-start: 60px;

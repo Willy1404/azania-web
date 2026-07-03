@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ManageShell from "@/components/manage/ManageShell";
 import ManageContentEditor from "@/components/manage/ManageContentEditor";
+import HomepageEditor from "@/components/manage/editors/HomepageEditor";
+import AboutAzaniaBankEditor from "@/components/manage/editors/AboutAzaniaBankEditor";
+import KarolAiEditor from "@/components/manage/editors/KarolAiEditor";
+import SupportEditor from "@/components/manage/editors/SupportEditor";
 import BankingPageForm from "@/components/manage/editors/BankingPageForm";
 import ManageEditorShell from "@/components/manage/forms/ManageEditorShell";
 import ManageFormField from "@/components/manage/forms/ManageFormField";
@@ -14,6 +18,53 @@ const COLLECTION_KEYS = [
 	"personal_banking_pages",
 	"treasury_capital_pages",
 ];
+
+const HUB_EDITORS = {
+	about_azania_bank: AboutAzaniaBankEditor,
+	support: SupportEditor,
+	karol_ai: KarolAiEditor,
+};
+
+function ManageHubContentPage({
+	shellProps,
+	portalId,
+	contentKey,
+	label,
+	initialData,
+}) {
+	const HubEditor = HUB_EDITORS[contentKey];
+	const sections = HubEditor.sections;
+	const [activeSection, setActiveSection] = useState(sections[0]?.key || "");
+
+	return (
+		<ManageShell
+			{...shellProps}
+			moduleSubmenu={
+				sections.length > 1
+					? {
+							parentKey: contentKey,
+							items: sections.map((section) => ({
+								key: section.key,
+								label: section.label,
+							})),
+							selectedKey: activeSection,
+							onSelect: setActiveSection,
+						}
+					: undefined
+			}
+		>
+			<HubEditor
+				portalId={portalId}
+				label={label}
+				initialData={initialData}
+				activeSection={activeSection}
+			/>
+			<Link className="manage-back-link" href={`/manage/${portalId}/dashboard`}>
+				Back to dashboard
+			</Link>
+		</ManageShell>
+	);
+}
 
 function ManageCollectionContentPage({
 	shellProps,
@@ -41,29 +92,73 @@ function ManageCollectionContentPage({
 		}
 	};
 
+	const addPage = () => {
+		const nextId =
+			Math.max(0, ...items.map((item) => Number(item.id) || 0)) + 1;
+		const newPage = {
+			id: nextId,
+			slug: `new-page-${nextId}`,
+			title: "New Page",
+			category: selectedItem?.category || items[0]?.category || "",
+			categoryId: selectedItem?.categoryId || items[0]?.categoryId || 1,
+			icon: "tji-box",
+			titleLarge: "",
+			shortDesc: "",
+			desc1: "",
+			desc2: "",
+			layout: "product",
+			features: [],
+			benefits: [],
+			faqs: [],
+			solutions: [],
+			bannerImage: "",
+			heroImage: "",
+		};
+		setItems((current) => [...current, newPage]);
+		setSelectedSlug(newPage.slug);
+	};
+
+	const deletePage = () => {
+		if (items.length <= 1 || !selectedSlug) return;
+		const nextItems = items.filter((item) => item.slug !== selectedSlug);
+		setItems(nextItems);
+		setSelectedSlug(nextItems[0]?.slug || "");
+	};
+
+	const persistItems = async (successMessage) => {
+		const response = await fetch(
+			`/api/manage/${portalId}/content/${contentKey}`,
+			{
+				method: "PUT",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ items }),
+			}
+		);
+		const result = await response.json();
+
+		if (!response.ok) {
+			return { error: result.error || "Save failed." };
+		}
+
+		router.refresh();
+		return { message: successMessage };
+	};
+
+	const handleSaveSection = (sectionName) =>
+		persistItems(`${sectionName} saved successfully.`);
+
 	const handleSaveAll = async () => {
 		setMessage("");
 		setError("");
 		setLoading(true);
 
 		try {
-			const response = await fetch(
-				`/api/manage/${portalId}/content/${contentKey}`,
-				{
-					method: "PUT",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ items }),
-				}
-			);
-			const result = await response.json();
-
-			if (!response.ok) {
-				setError(result.error || "Save failed.");
+			const result = await persistItems("All pages saved successfully.");
+			if (result.error) {
+				setError(result.error);
 				return;
 			}
-
-			setMessage("All pages saved successfully.");
-			router.refresh();
+			setMessage(result.message);
 		} catch {
 			setError("Unable to save pages.");
 		} finally {
@@ -74,8 +169,8 @@ function ManageCollectionContentPage({
 	return (
 		<ManageShell
 			{...shellProps}
-			sidebarPages={{
-				title: "Pages",
+			moduleSubmenu={{
+				parentKey: contentKey,
 				items: items.map((item) => ({
 					key: item.slug,
 					label: item.title || item.slug,
@@ -93,9 +188,30 @@ function ManageCollectionContentPage({
 					error={error}
 					saveLabel="Save all pages"
 				>
+					<div className="manage-collection__toolbar">
+						<button
+							type="button"
+							className="manage-toolbar__btn manage-toolbar__btn--add"
+							onClick={addPage}
+						>
+							+ Add page
+						</button>
+						<button
+							type="button"
+							className="manage-toolbar__btn manage-toolbar__btn--danger"
+							onClick={deletePage}
+							disabled={items.length <= 1}
+						>
+							Delete selected page
+						</button>
+					</div>
 					<div className="manage-collection__editor">
 						{selectedItem ? (
-							<BankingPageForm page={selectedItem} onChange={updateSelectedItem} />
+							<BankingPageForm
+								page={selectedItem}
+								onChange={updateSelectedItem}
+								onSaveSection={handleSaveSection}
+							/>
 						) : (
 							<p>No pages found.</p>
 						)}
@@ -185,8 +301,8 @@ function ManageNavContentPage({ shellProps, portalId, contentKey, label, initial
 	return (
 		<ManageShell
 			{...shellProps}
-			sidebarPages={{
-				title: "Menu items",
+			moduleSubmenu={{
+				parentKey: contentKey,
 				items: items.map((item, index) => ({
 					key: index,
 					label: item.name,
@@ -311,6 +427,34 @@ const ManageContentPageClient = ({
 	module,
 	initialData,
 }) => {
+	if (contentKey === "homepage") {
+		return (
+			<ManageShell {...shellProps}>
+				<HomepageEditor
+					portalId={portalId}
+					initialConfig={initialData?.config}
+					initialNews={initialData?.news}
+					initialForex={initialData?.forex}
+				/>
+				<Link className="manage-back-link" href={`/manage/${portalId}/dashboard`}>
+					Back to dashboard
+				</Link>
+			</ManageShell>
+		);
+	}
+
+	if (HUB_EDITORS[contentKey]) {
+		return (
+			<ManageHubContentPage
+				shellProps={shellProps}
+				portalId={portalId}
+				contentKey={contentKey}
+				label={module.label}
+				initialData={initialData}
+			/>
+		);
+	}
+
 	if (COLLECTION_KEYS.includes(contentKey)) {
 		return (
 			<ManageCollectionContentPage

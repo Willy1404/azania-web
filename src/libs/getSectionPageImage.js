@@ -19,7 +19,7 @@ const slugImageMap = {
 	forex: "/images/ban22.png",
 	"capital-market-services": "/images/m2.png",
 	"alternative-channels": "/images/b1.png",
-	"azania-lipa": "/images/b2.png",
+	"azania-lipa": "/images/scan3.png",
 	"whatsapp-banking": "/images/c1.png",
 	"internet-banking": "/images/c2.png",
 	"mobile-banking": "/images/c3.png",

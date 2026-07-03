@@ -11,7 +11,8 @@ const ManageShell = ({
 	userRole,
 	pageTitle = "Dashboard",
 	pageSubtitle,
-	sidebarPages,
+	contentModules = [],
+	moduleSubmenu,
 	children,
 }) => {
 	const router = useRouter();
@@ -23,7 +24,7 @@ const ManageShell = ({
 		router.refresh();
 	};
 
-	const roleLabel = userRole.replaceAll("_", " ");
+	const roleLabel = userRole.replaceAll("_", " ").toUpperCase();
 	const firstName = userName.split(" ")[0];
 	const initials = userName
 		.split(" ")
@@ -45,12 +46,6 @@ const ManageShell = ({
 			icon: "tji-worldwide",
 			external: true,
 		},
-		{
-			href: "/manage",
-			label: "All portals",
-			icon: "tji-strategy",
-			match: (path) => path === "/manage",
-		},
 	];
 
 	return (
@@ -61,35 +56,25 @@ const ManageShell = ({
 					<Link href="/manage" className="manage-topbar__logo">
 						<img src="/images/logos/azanialogo.png" alt="Azania Bank" />
 					</Link>
-					<div className="manage-topbar__portal">
-						<span className="manage-topbar__portal-icon">
-							<i className={portalIcon} aria-hidden="true" />
-						</span>
-						<div>
-							<p className="manage-topbar__portal-label">Portal</p>
-							<strong>{portalLabel}</strong>
-						</div>
-					</div>
 				</div>
 
 				<div className="manage-topbar__main">
 					<div className="manage-topbar__main-bg" aria-hidden="true" />
 					<div className="manage-topbar__main-inner">
 						<div className="manage-topbar__titles">
-							<p className="manage-topbar__eyebrow">
-								<i className={portalIcon} aria-hidden="true" />
-								{portalLabel}
-							</p>
 							<h1 className="manage-topbar__title">{pageTitle}</h1>
 							{pageSubtitle ? (
 								<p className="manage-topbar__subtitle">{pageSubtitle}</p>
 							) : null}
 						</div>
-						<div className="manage-topbar__badge">
+						<div
+							className="manage-topbar__badge"
+							aria-label={`${userName}, ${roleLabel}`}
+						>
 							<span className="manage-topbar__avatar" aria-hidden="true">
 								{initials}
 							</span>
-							<div>
+							<div className="manage-topbar__badge-meta">
 								<strong>{firstName}</strong>
 								<span>{roleLabel}</span>
 							</div>
@@ -124,28 +109,60 @@ const ManageShell = ({
 						})}
 					</nav>
 
-					{sidebarPages?.items?.length ? (
-						<div className="manage-sidebar__pages">
-							<h2>{sidebarPages.title}</h2>
-							<ul>
-								{sidebarPages.items.map((item) => {
-									const isActive =
-										String(sidebarPages.selectedKey) === String(item.key);
-									return (
-										<li key={String(item.key)}>
-											<button
-												type="button"
-												className={isActive ? "is-active" : ""}
-												onClick={() => sidebarPages.onSelect(item.key)}
+					<div className="manage-sidebar__body">
+						{contentModules.length ? (
+							<div className="manage-sidebar__modules">
+								<h2>Content modules</h2>
+								<ul>
+									{contentModules.map((module) => {
+										const isActive = pathname.startsWith(module.href);
+										const hasSubmenu =
+											moduleSubmenu?.parentKey === module.key &&
+											moduleSubmenu.items?.length;
+
+										return (
+											<li
+												key={module.key}
+												className={hasSubmenu ? "has-submenu" : undefined}
 											>
-												{item.label}
-											</button>
-										</li>
-									);
-								})}
-							</ul>
-						</div>
-					) : null}
+												<Link
+													href={module.href}
+													className={isActive ? "is-active" : ""}
+												>
+													<i className={module.icon} aria-hidden="true" />
+													<span>{module.label}</span>
+												</Link>
+												{hasSubmenu ? (
+													<ul className="manage-sidebar__submenu">
+														{moduleSubmenu.items.map((item) => {
+															const isChildActive =
+																String(moduleSubmenu.selectedKey) ===
+																String(item.key);
+															return (
+																<li key={String(item.key)}>
+																	<button
+																		type="button"
+																		className={
+																			isChildActive ? "is-active" : ""
+																		}
+																		onClick={() =>
+																			moduleSubmenu.onSelect(item.key)
+																		}
+																	>
+																		{item.label}
+																	</button>
+																</li>
+															);
+														})}
+													</ul>
+												) : null}
+											</li>
+										);
+									})}
+								</ul>
+							</div>
+						) : null}
+					</div>
 
 					<div className="manage-sidebar__user">
 						<button

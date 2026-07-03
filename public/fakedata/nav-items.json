@@ -10,10 +10,9 @@
         "name": "Alternative Channels",
         "path": "#",
         "items": [
-          { "id": 1, "name": "Alternative Channels", "path": "/business-banking/alternative-channels", "badge": null, "icon": "tji-operations" },
           { "id": 2, "name": "Azania LIPA", "path": "/business-banking/azania-lipa", "badge": null, "icon": "tji-budget" },
           { "id": 3, "name": "WhatsApp Banking", "path": "/business-banking/whatsapp-banking", "badge": null, "icon": "tji-comment" },
-          { "id": 4, "name": "Internet Banking", "path": "/business-banking/internet-banking", "badge": null, "icon": "tji-worldwide" },
+          { "id": 4, "name": "Internet Banking", "path": "https://digital.azaniabank.co.tz/internet-banking/login", "badge": null, "icon": "tji-worldwide" },
           { "id": 5, "name": "Mobile Banking", "path": "/business-banking/mobile-banking", "badge": null, "icon": "tji-phone" },
           { "id": 6, "name": "Agency Banking (WAKALA)", "path": "/business-banking/agency-banking", "badge": null, "icon": "tji-location" },
           { "id": 7, "name": "Azania VISA Card", "path": "/business-banking/visa-card", "badge": null, "icon": "tji-add-cart" },
@@ -26,7 +25,6 @@
         "name": "Business Facilities",
         "path": "#",
         "items": [
-          { "id": 1, "name": "Business Facilities", "path": "/business-banking/facilities", "badge": null, "icon": "tji-process-1" },
           { "id": 2, "name": "Overdraft Facilities", "path": "/business-banking/overdraft", "badge": null, "icon": "tji-budget" },
           { "id": 3, "name": "Project Financing", "path": "/business-banking/project-financing", "badge": null, "icon": "tji-strategy" },
           { "id": 4, "name": "SME Loans", "path": "/business-banking/sme-loans", "badge": null, "icon": "tji-performance" },
@@ -40,7 +38,6 @@
         "name": "Advisory and Facilitation",
         "path": "#",
         "items": [
-          { "id": 1, "name": "Advisory and Facilitation", "path": "/business-banking/advisory", "badge": null, "icon": "tji-excellence" },
           { "id": 2, "name": "Business Advisory and Facilitation", "path": "/business-banking/business-advisory", "badge": null, "icon": "tji-manage" }
         ]
       },
@@ -49,7 +46,6 @@
         "name": "Open an Account",
         "path": "#",
         "items": [
-          { "id": 1, "name": "Open an Account", "path": "/open-account", "badge": null, "icon": "tji-user" },
           { "id": 2, "name": "Download Form", "path": "/open-account/download-form", "badge": null, "icon": "tji-envelop" },
           { "id": 3, "name": "Apply for Internet Banking", "path": "/open-account/internet-banking", "badge": null, "icon": "tji-worldwide" }
         ]
@@ -60,17 +56,60 @@
     "id": 3,
     "name": "Personal Banking",
     "path": "/personal-banking",
+    "menuType": "personal-flyout",
     "submenu": [
-      { "id": 1, "name": "For The Future", "path": "#", "items": [{ "id": 1, "name": "For The Future", "path": "/personal-banking/for-the-future", "badge": null, "icon": "tji-strategy" }] },
-      { "id": 2, "name": "For Today", "path": "#", "items": [{ "id": 1, "name": "For Today", "path": "/personal-banking/for-today", "badge": null, "icon": "tji-operations" }] },
-      { "id": 3, "name": "For The Family", "path": "#", "items": [{ "id": 1, "name": "For The Family", "path": "/personal-banking/for-the-family", "badge": null, "icon": "tji-user" }] },
       {
-        "id": 4,
-        "name": "Quick Links",
+        "id": 1,
+        "name": "For The Future",
         "path": "#",
         "items": [
-          { "id": 1, "name": "Loans", "path": "/personal-banking/loans", "badge": null, "icon": "tji-budget" },
-          { "id": 2, "name": "Open an Account", "path": "/open-account", "badge": null, "icon": "tji-user" }
+          { "id": 1, "name": "Savings Account", "path": "/personal-banking/savings-account", "badge": null, "icon": "tji-budget" },
+          { "id": 2, "name": "Dhamira Account", "path": "/personal-banking/dhamira-account", "badge": null, "icon": "tji-strategy" },
+          { "id": 3, "name": "Fixed Deposit", "path": "/personal-banking/fixed-deposit", "badge": null, "icon": "tji-performance" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "For Today",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Students Account (Aspire Account)", "path": "/personal-banking/students-account", "badge": null, "icon": "tji-user" },
+          { "id": 2, "name": "Diaspora Account (Asili Account)", "path": "/personal-banking/diaspora-account", "badge": null, "icon": "tji-worldwide" },
+          { "id": 3, "name": "Mwanamke Hodari", "path": "/personal-banking/mwanamke-hodari", "badge": null, "icon": "tji-excellence" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "For The Family",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Watoto Account", "path": "/personal-banking/watoto-account", "badge": null, "icon": "tji-user" },
+          { "id": 2, "name": "Wastaafu Account", "path": "/personal-banking/wastaafu-account", "badge": null, "icon": "tji-budget" },
+          { "id": 3, "name": "Ziada Account", "path": "/personal-banking/ziada-account", "badge": null, "icon": "tji-strategy" }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Loans",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Consumer Loans", "path": "/personal-banking/consumer-loans", "badge": null, "icon": "tji-budget" },
+          { "id": 2, "name": "Mortgage Loans", "path": "/personal-banking/mortgage-loans", "badge": null, "icon": "tji-home" },
+          { "id": 3, "name": "Personal Loans", "path": "/personal-banking/personal-loans", "badge": null, "icon": "tji-user" },
+          { "id": 4, "name": "Salary Advance Loans", "path": "/personal-banking/salary-advance-loans", "badge": null, "icon": "tji-operations" },
+          { "id": 5, "name": "Kikundi Account", "path": "/personal-banking/kikundi-account", "badge": null, "icon": "tji-manage" },
+          { "id": 6, "name": "UNI-MSHIKO", "path": "/personal-banking/uni-mshiko", "badge": null, "icon": "tji-box" },
+          { "id": 7, "name": "Wastaafu Loans", "path": "/personal-banking/wastaafu-loans", "badge": null, "icon": "tji-budget" },
+          { "id": 8, "name": "Mwanamke Hodari", "path": "/personal-banking/mwanamke-hodari-loans", "badge": null, "icon": "tji-excellence" }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Open an Account",
+        "path": "#",
+        "items": [
+          { "id": 1, "name": "Download Form", "path": "/open-account/download-form", "badge": null, "icon": "tji-envelop" },
+          { "id": 2, "name": "Apply for Internet Banking", "path": "/open-account/internet-banking", "badge": null, "icon": "tji-worldwide" }
         ]
       }
     ]
@@ -102,7 +141,6 @@
         "name": "About Azania Bank",
         "path": "#",
         "items": [
-          { "id": 1, "name": "About Azania Bank", "path": "/about", "badge": null, "icon": "tji-excellence" },
           { "id": 2, "name": "Financial & Regulatory Reports", "path": "/reports", "badge": null, "icon": "tji-budget" }
         ]
       }
